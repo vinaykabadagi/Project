@@ -14,6 +14,21 @@ https://docs.mongodb.com/manual/installation/
 ```bash
 py -m pip install djongo
 ```
+# Edit project settings(settings.py)
+```bash
+# Edit Database configurations with your MongoDB configurations.
+# Search for DATABASES section.
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'ott',
+    }
+}
+```
 
 # Run the server
 ```bash

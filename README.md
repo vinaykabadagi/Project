@@ -7,7 +7,7 @@ Install python-3.7.2 and python-pip. Follow the steps from the below reference d
 ```bash
 py -m pip install Django
 ```
-3. Install MongoDB
+3. Install MongoDB <br>
 https://docs.mongodb.com/manual/installation/
 
 4. Install Djongo

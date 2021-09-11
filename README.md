@@ -12,7 +12,7 @@ https://docs.mongodb.com/manual/installation/
 
 4. Install Djongo
 ```bash
-py -m pip install djongo
+py pip install djongo
 ```
 # Edit project settings(settings.py)
 ```bash

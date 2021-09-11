@@ -8,9 +8,12 @@ Install python-3.7.2 and python-pip. Follow the steps from the below reference d
 py -m pip install Django
 ```
 3. Install MongoDB
+https://docs.mongodb.com/manual/installation/
 
-# Clone git repository
-https://github.com/vinaykabadagi/DBMS-Mini-Project
+4. Install Djongo
+```bash
+py -m pip install djongo
+```
 
 # Run the server
 ```bash

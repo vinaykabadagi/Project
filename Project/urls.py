@@ -23,6 +23,7 @@ urlpatterns = [
     path('series/', views.seriesPage,name="movies"),
     path('home/', views.openPage,name="index"),
     path('mylist/', views.mylistPage,name="mylist"),
-   
+   path('login/', views.loginPage,name="login"),
+   path('register/', views.registerPage,name="register"),
 
 ]

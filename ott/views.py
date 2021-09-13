@@ -9,3 +9,7 @@ def songsPage(request):
     return render(request, 'web/songs.html')
 def mylistPage(request):
     return render(request, 'web/mylist.html')
+def loginPage(request):
+    return render(request, 'web/login.html')
+def registerPage(request):
+    return render(request, 'web/register.html')

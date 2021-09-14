@@ -13,3 +13,7 @@ def loginPage(request):
     return render(request, 'web/login.html')
 def registerPage(request):
     return render(request, 'web/register.html')
+def vPage(request):
+    return render(request, 'web/vpage.html')
+def seemorePage(request):
+    return render(request, 'web/seemore.html')

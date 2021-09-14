@@ -18,12 +18,14 @@ from django.urls import path
 from ott import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.openPage,name="index"),
-    path('songs/', views.songsPage,name="songs"),
-    path('series/', views.seriesPage,name="movies"),
-    path('home/', views.openPage,name="index"),
-    path('mylist/', views.mylistPage,name="mylist"),
-   path('login/', views.loginPage,name="login"),
-   path('register/', views.registerPage,name="register"),
+    path('', views.openPage, name="index"),
+    path('songs/', views.songsPage, name="songs"),
+    path('series/', views.seriesPage, name="movies"),
+    path('home/', views.openPage, name="index"),
+    path('mylist/', views.mylistPage, name="mylist"),
+    path('login/', views.loginPage, name="login"),
+    path('register/', views.registerPage, name="register"),
+    path('vpage/', views.vPage, name="vpage"),
+    path('seemore/', views.seemorePage, name="seemore"),
 
 ]

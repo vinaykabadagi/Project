@@ -17,3 +17,5 @@ def vPage(request):
     return render(request, 'web/vpage.html')
 def seemorePage(request):
     return render(request, 'web/seemore.html')
+def removeAdsPage(request):
+    return render(request, 'web/buy.html')

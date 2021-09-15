@@ -27,5 +27,6 @@ urlpatterns = [
     path('register/', views.registerPage, name="register"),
     path('vpage/', views.vPage, name="vpage"),
     path('seemore/', views.seemorePage, name="seemore"),
+    path('buy/', views.removeAdsPage, name="remove Ads"),
 
 ]

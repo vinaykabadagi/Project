@@ -30,6 +30,8 @@ urlpatterns = [
     path('buy/', views.removeAdsPage, name="remove Ads"),
     path('videos/', views.videosPage, name="videos"),
     path('settings/', views.settingsPage, name="settings"),
+    path('view1page/', views.view1page, name="view1page"),
+    path('mychannel/', views.mychannel, name="mychannel"),
 
 
 ]

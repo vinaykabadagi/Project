@@ -19,3 +19,7 @@ def seemorePage(request):
     return render(request, 'web/seemore.html')
 def removeAdsPage(request):
     return render(request, 'web/buy.html')
+def videosPage(request):
+    return render(request, 'web/videos.html')
+def settingsPage(request):
+    return render(request, 'web/settings.html')

@@ -25,23 +25,6 @@
         .card {
             display: inline-block;
         }
-
-        .video-metadata {
-            padding-left: 0.5rem !important;
-        }
-
-        .video-title {
-            padding-left: 0.5rem !important;
-            margin-bottom: 0px !important;
-        }
-
-        .modal {
-            color: black;
-        }
-
-        .active1 {
-            border-bottom: 1px solid brown;
-        }
     </style>
     <script src="../../static/js/script.js" defer></script>
 </head>
@@ -51,12 +34,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-3">
-                    <a href="/" class="
+
+                    <a href="/home/" class="
                 d-flex
                 align-items-center
                 mb-2 mb-lg-0
-                text-white text-decoration-none
-              ">Blah..
+                 text-decoration-none
+              " style="font-size: large; color: #fe1495;"><img src="../../static/media/video-file-48.ico"
+                            alt="logo">&nbsp; Blah..
                     </a>
                 </div>
                 <div class="col-6">
@@ -68,45 +53,14 @@
                 <div class="col-3 text-end">
                     <a href="/login/"><button type="button" class="btn btn-outline-light">Login</button></a>
                     <a href="/register/"><button type="button" class="btn btn-warning">Sign-up</button></a>&nbsp;
+                    <a href="/settings/"><img src="../../static/media/gear-24.png" alt="" /></a>
 
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <img src="../../static/media/gear-24.png" alt="" />
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Settings</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body" style="text-align: center;">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">Video Playback</li>
-                                        <li class="list-group-item">Video Quality</li>
-                                        <li class="list-group-item">Notifications</li>
-                                        <li class="list-group-item">Contact Us</li>
-                                        <li class="list-group-item">About</li>
-                                    </ul>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    
+
     <main>
         {% block content %}
         {% endblock %}

@@ -12,24 +12,40 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="../../static/css/style1.css" />
     <title>My List</title>
+    <nav class="navbar navbar-expand-sm bg-dark">
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <div class="myDIV"><p class="more-for-you" style="font-size: 25px; padding-top: 8px; padding-bottom: 5px;"></p></div>
+          <li class="nav-item text-light">
+            <i class="fas fa-home"></i>
+          </li>
+          <div class="nav navbar-nav navbar-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY_xAFPr6_eaHdhA7_CtYUa_7vsSuA1g8wgw&usqp=CAU" alt="logo" style="width: 25px; height: 25px;"/>
+            <li><a href="#" class="text-light">Blah..</a></li>
+          </div>
+        </ul>
+      </nav>
+<style>
+    .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 35px;
+  background-color: #00a087;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+</style>
 </head>
 
 <body>
-    <header class="p-3 bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-3">
-                    <a href="/home/" class="
-                      d-flex
-                      align-items-center
-                      mb-2 mb-lg-0
-                      text-white text-decoration-none
-                    "> <i class="fas fa-home color-light"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
     <div class="bg-dark">
         <div class="videos">
             <section class="video-section">

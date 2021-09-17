@@ -20,6 +20,18 @@
       /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
     }
 
+    .scrolling-wrapper {
+      padding: 1rem 0;
+      margin: 0 1.5rem;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+
+    .card {
+      display: inline-block;
+    }
+
     /* Then style the iframe to fit in the container div with full height and width */
     .responsive-iframe {
       /* position: absolute; */
@@ -31,14 +43,10 @@
       height: 400px;
 
     }
-    body{
-      margin: 1%;
-      padding: 1%;
-    }
   </style>
 </head>
 
-<body class="bg-black">
+<body class="bg-black" style="margin: 1%;">
 
 
 
@@ -49,13 +57,25 @@
 
     <h3 style="background-color: powderblue; color: black;">Movie Name</h3>
   </div>
-  <button type="button" class="btn btn-outline-primary">Like</button>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <button type="button"
-    class="btn btn-outline-primary">Watchlist</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <button type="button" class="btn btn-outline-primary">Share</button>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-outline-primary">Like</button>
+
+          <button type="button" class="btn btn-outline-primary">Watchlist</button>
+          <button type="button" class="btn btn-outline-primary">Share</button>
+        </div>
+      </div>
+     
+
+    </div>
+
+
+  </div>
   <br>
-  <br>
+
   <p class="b" style="color:white;">Buttons will appear pressed (with a darker background, darker border, and inset
     shadow) when active. There’s no need to add a class to s as they use a pseudo-class. However, you can still force
     the same active appearance with .active (and include the aria-pressed="true" attribute)should you need to
@@ -66,50 +86,132 @@
 
   <h6 style="color: powderblue;">Genre : Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rating :
     9.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Timing:</h6>
-  <h2 class="row mt-2" style="color: white;"> Related:</h2>
+  <h2 class="row mt-2" style="color: white; margin: 1%;"> Related:</h2>
+
   <div class="container-fluid">
-    <div class="row mt-2">
-      <div class="col-sm-3">
-        <div class="card">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Movie title</h5>
-            <a href="#!" class="btn btn-primary">Watch</a>
+    <div class="scrolling-wrapper">
+
+
+      <div class="card">
+        <article class="video-container">
+          <a href="/vpage/" class="thumbnail">
+            <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
+          </a>
+          <div class="video-bottom-section">
+
+            <div class="video-details">
+              <a href="/vpage/" class="video-title">Video Title</a>
+              <div class="video-metadata">
+                <span>12K views</span>
+                •
+                <span>1 week ago</span>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
 
-      <div class="col-sm-3 d-none d-lg-block">
-        <div class="card">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Movie title</h5>
-            <a href="#!" class="btn btn-primary">Watch</a>
+
+
+      <div class="card">
+        <article class="video-container">
+          <a href="/vpage/" class="thumbnail">
+            <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
+          </a>
+          <div class="video-bottom-section">
+
+            <div class="video-details">
+              <a href="/vpage/" class="video-title">Video Title</a>
+              <div class="video-metadata">
+                <span>12K views</span>
+                •
+                <span>1 week ago</span>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
 
-      <div class="col-sm-3 d-none d-lg-block">
-        <div class="card">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/183.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Movie title</h5>
-            <a href="#!" class="btn btn-primary">Watch</a>
+
+
+      <div class="card">
+        <article class="video-container">
+          <a href="/vpage/" class="thumbnail">
+            <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
+          </a>
+          <div class="video-bottom-section">
+
+            <div class="video-details">
+              <a href="/vpage/" class="video-title">Video Title</a>
+              <div class="video-metadata">
+                <span>12K views</span>
+                •
+                <span>1 week ago</span>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-      <div class="col-sm-3 d-none d-lg-block">
-        <div class="card">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Movie title</h5>
-            <a href="#!" class="btn btn-primary">Watch</a>
+
+
+      <div class="card">
+        <article class="video-container">
+          <a href="/vpage/" class="thumbnail">
+            <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
+          </a>
+          <div class="video-bottom-section">
+
+            <div class="video-details">
+              <a href="/vpage/" class="video-title">Video Title</a>
+              <div class="video-metadata">
+                <span>12K views</span>
+                •
+                <span>1 week ago</span>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
+      <div class="card">
+        <article class="video-container">
+          <a href="/vpage/" class="thumbnail">
+            <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
+          </a>
+          <div class="video-bottom-section">
+
+            <div class="video-details">
+              <a href="/vpage/" class="video-title">Video Title</a>
+              <div class="video-metadata">
+                <span>12K views</span>
+                •
+                <span>1 week ago</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="card">
+        <article class="video-container">
+          <a href="/vpage/" class="thumbnail">
+            <img class="thumbnail-image" src="http://unsplash.it/250/150?gravity=center" />
+          </a>
+          <div class="video-bottom-section">
+
+            <div class="video-details">
+              <a href="/vpage/" class="video-title">Video Title</a>
+              <div class="video-metadata">
+                <span>12K views</span>
+                •
+                <span>1 week ago</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
     </div>
   </div>
-  </div>
+ 
 
 
 

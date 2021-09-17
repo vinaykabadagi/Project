@@ -23,3 +23,7 @@ def videosPage(request):
     return render(request, 'web/videos.html')
 def settingsPage(request):
     return render(request, 'web/settings.html')
+def view1page(request):
+    return render(request, 'web/view1page.html')
+def mychannel(request):
+    return render(request, 'web/mychannel.html')

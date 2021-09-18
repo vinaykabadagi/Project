@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>  
+  .container1 {
+    /* position: relative; */
+    overflow-x: none;
+    width: 100%;
+    
+    /* padding-top: 56.25%; */
+     /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  
+  /* Then style the iframe to fit in the container div with full height and width */
+  .responsive-iframe {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 400px;
+
+  }
+  .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    body {
+     background-color: #f9f9fa
+ }
+
+ .flex {
+     -webkit-box-flex: 1;
+     -ms-flex: 1 1 auto;
+     flex: 1 1 auto
+ }
+
+ @media (max-width:991.98px) {
+     .padding {
+         padding: 1.5rem
+     }
+ }
+
+ @media (max-width:767.98px) {
+     .padding {
+         padding: 1rem
+     }
+ }
+
+ .padding {
+     padding: 5rem
+ }
+
+ .card {
+     background: #fff;
+     border-width: 0;
+     border-radius: .25rem;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+     margin-bottom: 1.5rem
+ }
+
+ .card {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     min-width: 0;
+     word-wrap: break-word;
+     background-color: #fff;
+     background-clip: border-box;
+     border: 1px solid rgba(19, 24, 44, .125);
+     border-radius: .25rem
+ }
+
+ .card-header {
+     padding: .75rem 1.25rem;
+     margin-bottom: 0;
+     background-color: rgba(19, 24, 44, .03);
+     border-bottom: 1px solid rgba(19, 24, 44, .125)
+ }
+
+ .card-header:first-child {
+     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+ }
+
+ card-footer,
+ .card-header {
+     background-color: transparent;
+     border-color: rgba(160, 175, 185, .15);
+     background-clip: padding-box
+ }
+    </style>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+    <script>
+        $(document).ready(function() {
+            var ctx = $("#chart-line");
+            var myLineChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [2010, 2011, 2012, 2013,2014, 2015,2016, 2017, 2018, 2021],
+                    datasets: [{
+                        data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
+                        label: "Views",
+                        borderColor: "#458af7",
+                        backgroundColor: '#458af7',
+                        fill: false
+                    }, {
+                        data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
+                        label: "Likes",
+                        borderColor: "#8e5ea2",
+                        fill: true,
+                        backgroundColor: '#8e5ea2'
+                    }, {
+                        data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
+                        label: "Comments",
+                        borderColor: "#3cba9f",
+                        fill: false,
+                        backgroundColor: '#3cba9f'
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Your Videos got 21 viws in 2021'
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    
+
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" height="40px" width="40px" alt=""></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li><a href="#">Content</a></li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <h2>Channel Name</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a href="/mychannel/">Dashboard</a></li>
+        <li><a  href="/Channel_Content/">Content</a></li>
+        <li class ="active"><a  href="/Analytics/">Analytics</a></li>
+        <li><a href="/Channel_settings/">Settings</a></li>
+      </ul><br>
+    </div>
+
+    <div class="col-sm-9">
+        <div class="well">
+          <h4>Channel Analytics</h4>       
+        </div>    
+      </div>
+      <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row">
+                <div class="container-fluid d-flex justify-content-center">
+                    <div class="col-sm-8 col-md-6">
+                        <div class="card">
+                            <div class="card-header">Bar chart</div>
+                            <div class="card-body" style="height: 420px">
+                                <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div> <canvas id="chart-line" width="299" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</html>

@@ -39,3 +39,5 @@ def adminPage(request):
     return render(request, 'admin/dashboard.html')
 def uploadPage(request):
     return render(request, 'admin/upload.html')
+def likedPage(request):
+    return render(request, 'web/liked.html')

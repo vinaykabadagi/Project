@@ -33,3 +33,5 @@ def Channel_settings(request):
     return render(request, 'web/Channel_settings.html')
 def Analytics(request):
     return render(request, 'web/Analytics.html')
+def myprofilePage(request):
+    return render(request, 'web/myprofile.html')

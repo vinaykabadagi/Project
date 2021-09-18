@@ -32,6 +32,10 @@ urlpatterns = [
     path('settings/', views.settingsPage, name="settings"),
     path('view1page/', views.view1page, name="view1page"),
     path('mychannel/', views.mychannel, name="mychannel"),
+    path('Analytics/', views.Analytics, name="Analytics"),
+    path('Channel_Content/', views.Channel_Content, name="Channel_Content"),
+    path('Channel_settings/', views.Channel_settings, name="Channel_settings"),
+    
 
 
 ]

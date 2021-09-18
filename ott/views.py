@@ -27,3 +27,9 @@ def view1page(request):
     return render(request, 'web/view1page.html')
 def mychannel(request):
     return render(request, 'web/mychannel.html')
+def Channel_Content(request):
+    return render(request, 'web/Channel_Content.html')
+def Channel_settings(request):
+    return render(request, 'web/Channel_settings.html')
+def Analytics(request):
+    return render(request, 'web/Analytics.html')

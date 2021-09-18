@@ -35,3 +35,7 @@ def Analytics(request):
     return render(request, 'web/Analytics.html')
 def myprofilePage(request):
     return render(request, 'web/myprofile.html')
+def adminPage(request):
+    return render(request, 'admin/dashboard.html')
+def uploadPage(request):
+    return render(request, 'admin/upload.html')

@@ -37,6 +37,7 @@ urlpatterns = [
     path('Channel_settings/', views.Channel_settings, name="Channel_settings"),
     path('myprofile/', views.myprofilePage, name="myprofile"),
     path('upload/', views.uploadPage, name="upload"),
+    path('liked/', views.likedPage, name="liked"),
     
 
 

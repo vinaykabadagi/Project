@@ -38,7 +38,8 @@ urlpatterns = [
     path('myprofile/', views.myprofilePage, name="myprofile"),
     path('upload/', views.uploadPage, name="upload"),
     path('liked/', views.likedPage, name="liked"),
-     path('userlist/', views.userlistPage, name="userlist"),
+    path('userlist/', views.userlistPage, name="userlist"),
+    path('watchhistory/', views.watchhistoryPage, name="watchhistory"),
 
 
 ]

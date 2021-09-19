@@ -43,3 +43,5 @@ def likedPage(request):
     return render(request, 'web/liked.html')
 def userlistPage(request):
     return render(request, 'admin/userlist.html')
+def watchhistoryPage(request):
+    return render(request, 'web/watchhistory.html')

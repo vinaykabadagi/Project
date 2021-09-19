@@ -1,0 +1,78 @@
+{% extends './base.html' %}
+{% block title %}Upload{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/dashboard/">
+                            <span data-feather="home"></span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/upload/">
+                            <span data-feather="file"></span>
+                            Upload
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="users"></span>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="movies"></span>
+                            Movies
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="series"></span>
+                            Series
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="songs"></span>
+                            Songs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="videos"></span>
+                            Videos
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <h2 style="text-align: center; padding: 1%;">Upload</h2>
+            <div class="card-group" style="padding-top: 3%;">
+                <div class="card text-center">
+                    <a href=""><img class="card-img-top" src="../../static/admin/media/upload.png" alt="upload"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Upload Movies</h5>
+                    </div>
+                </div>
+                &nbsp;&nbsp;
+                <div class="card text-center">
+                    <a href=""><img class="card-img-top" src="../../static/admin/media/upload.png" alt="upload"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Upload Series</h5>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}

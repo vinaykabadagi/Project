@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from ott import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.openPage, name="index"),
+    # path('admin/', admin.site.urls),
+    path('dashboard/', views.adminPage, name="index"),
     path('songs/', views.songsPage, name="songs"),
     path('series/', views.seriesPage, name="movies"),
     path('home/', views.openPage, name="index"),
@@ -36,7 +36,9 @@ urlpatterns = [
     path('Channel_Content/', views.Channel_Content, name="Channel_Content"),
     path('Channel_settings/', views.Channel_settings, name="Channel_settings"),
     path('myprofile/', views.myprofilePage, name="myprofile"),
-    
+    path('upload/', views.uploadPage, name="upload"),
+    path('liked/', views.likedPage, name="liked"),
+     path('userlist/', views.userlistPage, name="userlist"),
 
 
 ]

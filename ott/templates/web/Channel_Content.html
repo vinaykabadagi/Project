@@ -9,7 +9,42 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-expand-sm bg-dark">
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <div class="myDIV"><p class="more-for-you" style="font-size: 25px; padding-top: 8px; padding-bottom: 5px;"></p></div>
+      <li class="nav-item" style="margin-left: 15px;">
+        <a href="file:///C:/Users/Asus/OneDrive/Desktop/project/ott1/templates/home.html" style="color: white;">
+        <i class="fas fa-home"></i>
+        </a>
+      </li> 
+      <div class="nav navbar-nav navbar-center">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY_xAFPr6_eaHdhA7_CtYUa_7vsSuA1g8wgw&usqp=CAU" alt="logo" style="width: 35px; height: 30px; margin-right: 15px;"/>
+        <li><a href="#" class="text-light"><b>name of webapp</b></a></li>
+      </div>
+    </ul>
+  </nav>
   <style>  
+  .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 45px;
+  background-color: #00a087;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+.navbar-nav>li>a {
+    padding-top: 0px;
+    /* padding-bottom: 15px; */
+}
   .container1 {
     /* position: relative; */
     overflow-x: none;
@@ -75,6 +110,7 @@ text-align: center;
         <li><a href="#">Analytics</a></li>
         <li><a href="#">Settings</a></li>
       </ul>
+
     </div>
   </div>
 </nav>
@@ -94,6 +130,7 @@ text-align: center;
     
     <div class="col-sm-9">
       <div class="well">
+        <br>
         <h4>Channel Content</h4>       
       </div>    
     </div>

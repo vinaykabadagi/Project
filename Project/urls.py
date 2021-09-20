@@ -40,6 +40,8 @@ urlpatterns = [
     path('liked/', views.likedPage, name="liked"),
     path('userlist/', views.userlistPage, name="userlist"),
     path('watchhistory/', views.watchhistoryPage, name="watchhistory"),
+    path('admin_videos/', views.admin_videos, name="admin_videos"),
+    path('reported_videos/', views.reported_videos, name="reported_videos"),
 
 
 ]

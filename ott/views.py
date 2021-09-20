@@ -45,3 +45,7 @@ def userlistPage(request):
     return render(request, 'admin/userlist.html')
 def watchhistoryPage(request):
     return render(request, 'web/watchhistory.html')
+def reported_videos(request):
+    return render(request, 'admin/reported_videos.html')
+def admin_videos(request):
+    return render(request, 'admin/videos.html')

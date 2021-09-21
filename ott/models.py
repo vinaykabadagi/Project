@@ -38,6 +38,7 @@ class videos(models.Model):
     v_likes = models.Integerfield()
     v_wh = models.Integerfield()
 
+#akshhhhhhh!
 
 # Create your models here.
 

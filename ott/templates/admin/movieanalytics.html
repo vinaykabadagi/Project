@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../../static/css/style.css" />
+  <title>Movie Series Analytics</title>
+<style>
+   a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+    .previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+.round {
+  border-radius: 50%;
+}
+
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+   height: 230vh;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  /*border: 1px solid #ccc;*/
+  width: 70%;
+  border-left: none;
+  height: 200px;
+}
+</style>
+</head>
+
+<body  class="bg-black">
+  <nav class="navbar navbar-expand-sm bg-primary">
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <div class="myDIV"><p class="more-for-you" style="font-size: 25px; padding-top: 8px; padding-bottom: 5px;"></p></div>
+          <li class="nav-item" style="margin-left: 15px;">
+            <a href="file:///C:/Users/Asus/OneDrive/Desktop/project/ott1/templates/home.html" style="color: black;">
+            <i class="fas fa-home"></i>
+            </a>
+          </li> 
+          <div class="nav navbar-nav navbar-center">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgTFhIXGSEbGBgVGR0UHhkWIB0iIh4kIR4eJigiICMxIhsfJT0tJSkuOjouHiszRD8xQyg1OisBCgoKDg0OGxAQGjUlHyIrLS0zMjc3KzU3Ny0uNy0tNTc1MC4tLy43Li8tLy8rLS8tLSstLSs1NzEtMDcrKzAyLf/AABEIAUsAmAMBIgACEQEDEQH/xAAaAAEBAQEBAQEAAAAAAAAAAAAABAMFAgEH/8QALxAAAgEDAwQABQMEAwAAAAAAAAECAwQREiExBRNBURQiMmGBcZGhscHR4SNSkv/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAfEQEAAgMAAQUAAAAAAAAAAAAAARECITHBEjJBUZH/2gAMAwEAAhEDEQA/APw4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPUac5JOMHjOOPPr9QPIKYWdSdjUvFKOmMlHGVqbfpc4+/3Fv0+7uO92beT0Q1y2xiGM5efaax7yWpWpTAuh0/sX/w3Vqjo4WXqi5PeKklheWmucYzuZKxuXYSvlSfbUtDfqWM7+uRUnplMACIAAAAAAAAAAAAAABrbUVXuKdF1Yxy8apPCX3bA92c7eDq/EW7nmLUfm0qMmsKT2ecc4ytzo9KuuqRo6LSukqSlOKehY2+ZxUt5PHrL/Q3ncVOn9Luek1rb5KibhPeCqLWmptPOpYhiOGkk5c5Zyq1ChStqLjcxcpJ6opP5JJvGXw04tPKzy/W++Ont5PhVShLqfV9XSenLLaapL51tzzjb7fc3veprrV3aT6lpiovEpQT1OLeXs/S2SWyRPZfFWvTrq4t7uMU8RnBTxKUc7NLys+c7GNjbVr2qqdrRc5YbSSxhLd/wLn9Lmq+2nUrvVV+ChX7lGnOXbk4pNpvlvGpp84bPtKF7bUo213PtUq6UnKUc5gpNJ7JyxlZwucGF1cUrmp36dvCDUUtME0srC1bt7+/vufb7twuI0qF26scLEnmPKWVh5xh7fgX8pe7U3dmrunUq9LtH26McSn/3WraenGU8STfOF6OSdete3fTqlfp1teQlS+beCUk4yilLTJxUlmKSeOcEU6lGXT4U4Wr1Rk26meVJLEWseNLa38v8TKjKkoAMsAAAAAAAAAAAHQ6Sump1qnU1OWEtMIbam3u3LxhZePLxwc8vsu7eUodNtrWLqSmnGS+vhpxz64f4Lj1rHr5adu4pVYXVzKOmL7a06k5c6c5WjL+z3fjkzqUqDtac6dWTquTUoafpiksPPnOX42wUXvT5dy6+Dm6lOklqm1o5wntLf6spediKTnGliTe/9CzrpOtTDWkoUlTlc0tUVLeKljK9ZWccGiuLONS9xbycZJqknLGnMljVj6sRz+cGatbqjaQvnR/4pPTnZptbtP8Ar/Ipxtpaqizss6H5/R+vfGxNwXMM6UNKcqksJp4z5/0fIQgprVUi/wB/8Hic5VJuc3uzy1jGURlXZXlS0u41XRjNriNRNpP3hNceC2tUoWXSJ21G71Tq6JSUEpR0pZSk2k1NNv6c8tZ5OZJzWlJeF43/AMnRu7W86LCrRvrGKdWLjieHKOmW7STzHePnZr2mai6bxmackAGWAAAAAAAAAAADS3qqjXhVdNSw86ZZSf66Wn+zRmALrn4jM7vtSp0qrloznDw84Tf1YeN/ZjWt69pUnRuqLjJYbjLZrKTW3K2Zj3J9tU9b0p5xnbL5ePey/YruOq3tzUtalxW1SpfTJpN7PKy/O/s1prUs4wt52VWpOu1NNKMFHKknnL1Z2xhLh8o82K1XdOGnOp6f/W39zzd3FW7uqtzXlmUm5N/dmvS46+pWqeca03j0nl/wSUlKXW11KtG0sru5caMZN5xq06sanjzxx7/VkIESRNK6Cs1K67txUSSfbaisylnbUs/KsZzu/wAk05ynLVOTb9vc8gWWAAiAAAAAAAAAAAAAAAABV0+rChOtVnPDUJKP3lJafxtJv8EoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/9k=" alt="logo" style="width: 35px; height: 30px; margin-right: 15px;"/>
+            <li style="margin-right:15px"><a href="#" class="text-dark"><b style="font-size: 20px;">name of webapp</b></a></li>
+          </div>
+        </ul>
+      </nav>
+<style>
+    .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 45px;
+  background-color: #00a087;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+
+</style>
+  <header class="p-3 bg-dark text-white">
+
+
+
+    <a href="#" class="previous round" style="margin-top: 30px;">&#8592;</a>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <!-- <a href="/" class="
+                d-flex
+                align-items-center
+                mb-2 mb-lg-0
+                text-white text-decoration-none
+              ">Movies
+          </a>
+ -->
+ <h2> Movies</h2>
+        </div>
+        <div class="col-6">
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- <h2>Vertical Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p> -->
+
+<div class="tab">
+  <button class="tablinks" onclick="openName(event, 'Movie')" id="defaultOpen">Movie Analytics</button>
+  <button class="tablinks" onclick="openName(event, 'Series')">Series Analytics</button>
+  <button class="tablinks" onclick="openName(event, 'Reported')">Reported Videos</button>
+  <button class="tablinks" onclick="openName(event, 'Videos')">Videos</button>
+</div>
+
+<div id="Movie" class="tabcontent">
+  <div class="container-fluid">
+      <div class="row mt-6">
+        <div class="col-sm-4">
+
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Movie title</h5>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container col-sm-8">
+          <h4 style="color: powderblue; margin-left: 50px; margin-top: 30px;">Genre : Horror<br><br><br>Views:260k<br><br><br>Likes:140k</h4>
+        </div>
+</div>
+</div>
+<hr style="color: powderblue;">
+
+<div class="container-fluid">
+      <div class="row mt-6">
+        <div class="col-sm-4">
+
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Movie title</h5>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container col-sm-8">
+          <h4 style="color: powderblue; margin-left: 50px; margin-top: 30px;">Genre : Romantic<br><br><br>Views:60k<br><br><br>Likes:40k</h4>
+        </div>
+</div>
+</div>
+<hr style="color: powderblue;">
+<div class="container-fluid">
+      <div class="row mt-6">
+        <div class="col-sm-4">
+
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Movie title</h5>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container col-sm-8">
+          <h4 style="color: powderblue; margin-left: 50px; margin-top: 30px;">Genre : Thriller<br><br><br>Views:700k<br><br><br>Likes:400k</h4>
+        </div>
+</div>
+</div>
+<hr style="color: powderblue;">
+<h3 style="color: powderblue;">Genre Based Views:400k</h3>
+<br>
+<hr style="color: powderblue;">
+
+<div class="row">
+<div class="col-sm-4">
+<h3 style="color: powderblue;">Horror Views:990K</h3>
+</div>
+
+<div class="col-sm-4">
+<h3 style="color: powderblue;">Romantic Views:12M</h3>
+</div>
+
+<div class="col-sm-4">
+<h3 style="color: powderblue;">Thriller Views:780K</h3>
+</div>
+
+<hr style="color: powderblue;">
+
+<h3 class="row mt-2" style="color: powderblue;">&nbsp;Most Liked:</h3>
+    <div class="container-fluid">
+      <div class="row mt-2">
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title text-start">Movie title <a href="#!" class="btn btn-primary float-end">Watch</a></h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 d-none d-lg-block">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title text-start">Movie title <a href="#!" class="btn btn-primary float-end">Watch</a></h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 d-none d-lg-block">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/183.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title text-start">Movie title <a href="#!" class="btn btn-primary float-end">Watch</a></h5>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    </div>
+
+</div>
+
+<div id="Series" class="tabcontent">
+  <!-- <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>  -->
+    <div class="container-fluid">
+      <div class="row mt-6">
+        <div class="col-sm-4">
+
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Series title</h5>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container col-sm-8">
+          <h4 style="color: powderblue; margin-left: 50px; margin-top: 30px;">Genre : Horror<br><br><br>Views:260k<br><br><br>Likes:140k</h4>
+        </div>
+</div>
+</div>
+<hr style="color: powderblue;">
+
+<div class="container-fluid">
+      <div class="row mt-6">
+        <div class="col-sm-4">
+
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Series title</h5>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container col-sm-8">
+          <h4 style="color: powderblue; margin-left: 50px; margin-top: 30px;">Genre : Romantic<br><br><br>Views:60k<br><br><br>Likes:40k</h4>
+        </div>
+</div>
+</div>
+<hr style="color: powderblue;">
+<div class="container-fluid">
+      <div class="row mt-6">
+        <div class="col-sm-4">
+
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Series title</h5>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container col-sm-8">
+          <h4 style="color: powderblue; margin-left: 50px; margin-top: 30px;">Genre : Thriller<br><br><br>Views:700k<br><br><br>Likes:400k</h4>
+        </div>
+</div>
+</div>
+<hr style="color: powderblue;">
+<h3 style="color: powderblue;">Genre Based Views:400k</h3>
+<br>
+<hr style="color: powderblue;">
+
+<div class="row">
+<div class="col-sm-4">
+<h3 style="color: powderblue;">Horror Views:990K</h3>
+</div>
+
+<div class="col-sm-4">
+<h3 style="color: powderblue;">Romantic Views:12M</h3>
+</div>
+
+<div class="col-sm-4">
+<h3 style="color: powderblue;">Thriller Views:780K</h3>
+</div>
+
+<hr style="color: powderblue;">
+
+<h3 class="row mt-2" style="color: powderblue;">&nbsp;Most Liked:</h3>
+    <div class="container-fluid">
+      <div class="row mt-2">
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title text-start">Series title <a href="#!" class="btn btn-primary float-end">Watch</a></h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 d-none d-lg-block">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title text-start">Series title <a href="#!" class="btn btn-primary float-end">Watch</a></h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 d-none d-lg-block">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/183.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title text-start">Series title <a href="#!" class="btn btn-primary float-end">Watch</a></h5>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    </div>
+</div>
+
+<div id="Reported" class="tabcontent">
+  <!-- <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p> -->
+</div>
+
+<div id="Videos" class="tabcontent">
+  <!-- <h3>Tokyo</h3>
+  <p>Tokyo is not the capital of Japan.</p> -->
+</div>
+
+<script>
+function openName(evt, Name) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(Name).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 

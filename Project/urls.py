@@ -22,6 +22,7 @@ urlpatterns = [
     path('songs/', views.songsPage, name="songs"),
     path('series/', views.seriesPage, name="movies"),
     path('home/', views.openPage, name="index"),
+    path('', views.openPage, name="index"),
     path('mylist/', views.mylistPage, name="mylist"),
     path('login/', views.loginPage, name="login"),
     path('register/', views.registerPage, name="register"),

@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from ott.models import AdminMaster
+from ott.models import User
+
+
 
 # Create your views here.
 
@@ -97,3 +101,23 @@ def reported_videos(request):
 
 def admin_videos(request):
     return render(request, 'admin/videos.html')
+
+# def userReg(request):
+#     lclId = AdminMaster.objects.count()
+#     lclId = lclId + 1;
+#     AdminMaster.objects.create(
+#         admin_id = lclId,
+#         admin_un = request.POST[]
+#     )
+
+def userReg(request):
+    lclId = User.objects.count()
+    lclId = lclId + 1;
+    User.objects.create(
+        user_id = lclId,
+        user_un = request.POST['Username'],
+        user_name = request.POST["Name"],
+        user_email = request.POST['Email-Id'],
+        user_phone = request.POST['PhoneNo.'],
+        user_pw = request.POST['Password']
+    )

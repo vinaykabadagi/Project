@@ -12,6 +12,7 @@ class User(models.Model):
     user_un = models.CharField( unique=True,max_length=20)
     user_name=models.CharField(max_length=25)
     user_email=models.EmailField(max_length=254,unique=True)
+    user_phone=models.IntegerField(unique=True)
     user_pw = models.CharField(max_length=12)
     user_ChannelName = models.CharField(max_length=25,unique=True)
     user_status = models.CharField(max_length=8)

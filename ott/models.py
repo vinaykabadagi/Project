@@ -29,7 +29,7 @@ class Media(models.Model):
     m_views = models.IntegerField()
     m_likes = models.IntegerField()
     m_actors = models.CharField(max_length=200)
-    m_dir = models.CharField(max_length=200)x
+    m_dir = models.CharField(max_length=200)
     m_date = models.DateField()
 
 

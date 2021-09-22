@@ -8,6 +8,9 @@ $(document).ready(function() {
 		if($("#name").val() == "") {
 			alert("Please Enter Name");
 		}
+		if($("#username").val() == "") {
+			alert("Please Enter Username");
+		}
 		if($("#email-id").val() == "") {
 			alert("Please Enter Email-id");
 		}
@@ -26,6 +29,7 @@ $(document).ready(function() {
 
 let formData=new FormData();
 formData.append("name",$("#name").val());
+formData.append("username",$("#username").val());
 formData.append("email-id",$("#email-id").val());
 formData.append("phoneno",$("#phoneno").val());
 formData.append("password",$("#password").val());

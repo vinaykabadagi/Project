@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class AdminMaster(models.Model):
     admin_id=models.AutoField(primary_key=True,unique=True)
     admin_un= models.CharField(unique=True,max_length=8)
@@ -21,6 +22,7 @@ class Channel(models.Model):
     channel_sub = models.IntegerField()
     channel_status = models.CharField(max_length=8)
 
+
 class Media(models.Model):
     m_id = models.AutoField(primary_key=True, unique=True)
     m_title = models.CharField(max_length=100)
@@ -37,6 +39,7 @@ class Media(models.Model):
     m_series = models.ImageField(upload_to="ott/static/media/images_series")
 
 
+
 class videos(models.Model):
     v_id = models.AutoField(primary_key=True, unique=True)
     v_title = models.CharField(max_length=100)
@@ -51,4 +54,3 @@ class videos(models.Model):
     
 
 # Create your models here.
-

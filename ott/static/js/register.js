@@ -52,9 +52,13 @@ $.ajax ({
 	processData:false,
 	contentType:false,
 	success: function(response){
+		if (response=="10"){
+			alert("already Registered!,LOGIN!")
+		}
+		else{
 		alert("Registration successful");
 		window.location = "/home/";
-
+		}
 	}
 	
 });

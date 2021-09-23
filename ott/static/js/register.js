@@ -53,7 +53,7 @@ $.ajax ({
 	contentType:false,
 	success: function(response){
 		if (response=="10"){
-			alert("already Registered!,LOGIN!")
+			alert("Already Registered! LOGIN!")
 			window.location = "/login/";
 		}
 		else{

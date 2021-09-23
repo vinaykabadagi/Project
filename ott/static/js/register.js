@@ -4,6 +4,9 @@
 
 $(document).ready(function () {
   $("#btnId").click(function () {
+    let usernameValue = $("#username").val();
+    let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
+    let s = $("#email-id").val();
     if ($("#name").val() == "") {
       alert("Please Enter Name");
       return false;
@@ -11,9 +14,12 @@ $(document).ready(function () {
     if ($("#username").val() == "") {
       alert("Please Enter Username");
       return false;
+    } else if (usernameValue.length < 3 || usernameValue.length > 10) {
+      alert("**length of username must be between 3 and 10");
+      return false;
     }
-    if ($("#email-id").val() == "") {
-      alert("Please Enter Email-id");
+    if ($("#email-id").val() == "" || regex.test(s) == 0) {
+      alert("Please Enter valid Email-id");
       return false;
     }
     if ($("#phoneno").val() == "") {
@@ -23,7 +29,11 @@ $(document).ready(function () {
     if ($("#password").val() == "") {
       alert("Please Enter Password");
       return false;
+    } else if ($("#password").val().length < 5) {
+      alert("**length of password must be at least 5");
+      return false;
     }
+
     if ($("#confirmpassword").val() == "") {
       alert("Please Confirm your Password");
       return false;

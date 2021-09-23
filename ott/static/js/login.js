@@ -12,8 +12,7 @@ let formData = new FormData();
 	formData.append("password", $("#password").val());
 	formData.append(
 		"csrfmiddlewaretoken",
-		$("input[name=csrfmiddlewaretoken]").val()
-	  );
+		$("input[name=csrfmiddlewaretoken]").val());
 
 $.ajax({
 	url: "/user_login/",

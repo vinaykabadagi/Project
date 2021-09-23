@@ -6,7 +6,9 @@ $(document).ready(function () {
   $("#btnId").click(function () {
     let usernameValue = $("#username").val();
     let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
+	let pattern= /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
     let s = $("#email-id").val();
+	let y = $("#password").val();
     if ($("#name").val() == "") {
       alert("Please Enter Name");
       return false;
@@ -29,8 +31,8 @@ $(document).ready(function () {
     if ($("#password").val() == "") {
       alert("Please Enter Password");
       return false;
-    } else if ($("#password").val().length < 5) {
-      alert("**length of password must be at least 5");
+    } else if ($("#password").val().length < 5 || pattern.test(y) == 0) {
+      alert("**length of password must be at least 5 or enter your password with validation");
       return false;
     }
 

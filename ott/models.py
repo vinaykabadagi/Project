@@ -53,6 +53,3 @@ class videos(models.Model):
     v_wh = models.IntegerField()
     v_image = models.ImageField(upload_to="ott/static/media/images_videos")
     v_status = models.CharField(max_length=8)
-
-
-# Create your models here.

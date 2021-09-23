@@ -2,20 +2,22 @@ from django.db import models
 
 
 class AdminMaster(models.Model):
-    admin_id=models.AutoField(primary_key=True,unique=True)
-    admin_un= models.CharField(unique=True,max_length=8)
-    admin_pass=models.CharField(max_length=10)
+    admin_id = models.AutoField(primary_key=True, unique=True)
+    admin_un = models.CharField(unique=True, max_length=8)
+    admin_pass = models.CharField(max_length=10)
     admin_status = models.CharField(max_length=8)
 
+
 class User(models.Model):
-    user_id = models.AutoField(primary_key=True,unique=True)
-    user_un = models.CharField( unique=True,max_length=20)
-    user_name=models.CharField(max_length=25)
-    user_email=models.EmailField(max_length=254,unique=True)
-    user_phone=models.IntegerField(unique=True)
+    user_id = models.AutoField(primary_key=True, unique=True)
+    user_un = models.CharField(unique=True, max_length=20)
+    user_name = models.CharField(max_length=25)
+    user_email = models.EmailField(unique=True)
+    user_phone = models.IntegerField(unique=True, default=1)
     user_pw = models.CharField(max_length=12)
-    user_ChannelName = models.CharField(max_length=25,unique=True)
+    user_ChannelName = models.CharField(max_length=25, unique=True)
     user_status = models.CharField(max_length=8)
+
 
 class Channel(models.Model):
     channel_Name = models.CharField(max_length=25, unique=True)
@@ -40,7 +42,6 @@ class Media(models.Model):
     m_series = models.ImageField(upload_to="ott/static/media/images_series")
 
 
-
 class videos(models.Model):
     v_id = models.AutoField(primary_key=True, unique=True)
     v_title = models.CharField(max_length=100)
@@ -52,6 +53,6 @@ class videos(models.Model):
     v_wh = models.IntegerField()
     v_image = models.ImageField(upload_to="ott/static/media/images_videos")
     v_status = models.CharField(max_length=8)
-    
+
 
 # Create your models here.

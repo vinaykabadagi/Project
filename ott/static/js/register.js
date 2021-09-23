@@ -54,6 +54,7 @@ $.ajax ({
 	success: function(response){
 		if (response=="10"){
 			alert("already Registered!,LOGIN!")
+			window.location = "/login/";
 		}
 		else{
 		alert("Registration successful");

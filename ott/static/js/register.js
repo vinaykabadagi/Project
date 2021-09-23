@@ -7,6 +7,7 @@ $(document).ready(function () {
     let usernameValue = $("#username").val();
     let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
 	let pattern= /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+	let patt= /[A-Za-z0-9]+/;
     let s = $("#email-id").val();
 	let y = $("#password").val();
     if ($("#name").val() == "") {
@@ -16,7 +17,7 @@ $(document).ready(function () {
     if ($("#username").val() == "") {
       alert("Please Enter Username");
       return false;
-    } else if (usernameValue.length < 3 || usernameValue.length > 10) {
+    } else if (usernameValue.length < 3 || usernameValue.length > 10|| patt.test(usernameValue) == 0) {
       alert("**length of username must be between 3 and 10");
       return false;
     }

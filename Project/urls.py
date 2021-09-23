@@ -43,8 +43,8 @@ urlpatterns = [
     path('watchhistory/', views.watchhistoryPage, name="watchhistory"),
     path('admin_videos/', views.admin_videos, name="admin_videos"),
     path('reported_videos/', views.reported_videos, name="reported_videos"),
-    path('user_registeration/',views.userReg)
-    
+    path('user_registeration/',views.userReg),
+    path('user_login/',views.userLogin),
 
 
 ]

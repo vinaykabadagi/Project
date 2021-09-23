@@ -128,3 +128,13 @@ def userReg(request):
             user_ChannelName = ""
         )
         return HttpResponse("1")
+
+
+def userLogin(request): 
+        lclId = User.objects.count()
+        lclId = lclId + 1
+        User.objects.create(
+            user_name = request.POST["name"],
+            user_pw = request.POST['password'],
+         )
+         

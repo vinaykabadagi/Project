@@ -1,6 +1,7 @@
 {% csrf_token %}
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Details</title>
   <meta charset="utf-8">
@@ -12,81 +13,89 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- <script src="/static/js/bootstrap.min.js"></script> -->
   <style>
-  .border {
-    display: inline-block;
-    width: 70px;
-    height: 70px;
-    margin: 6px;
-  }
-
+    .border {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      margin: 6px;
+    }
   </style>
-  
+
 </head>
-<body style="background-color: powderblue;"> 
+
+<body style="background-color: powderblue;">
   <div class="bg-info">
-  <img src="img.jpg" class="mx-auto d-block" style="width:10%">
-  <h3 style="text-align: center;">OTT</h3>
- </div>
- <h2 style="text-align:center; background-color: aliceblue;">Additional Details:</h2>
+    <img src="img.jpg" class="mx-auto d-block" style="width:10%">
+    <h3 style="text-align: center;">OTT</h3>
+  </div>
+  <h2 style="text-align:center; background-color: aliceblue;">Additional Details:</h2>
 
-   <div class="container-fluid" style="background-color: powderblue;">
-  
-<div class="container md-3"> 
-   <div class="container" style="background-color: powderblue;">
-      <div class="col-md-12 text-center">
+  <div class="container-fluid" style="background-color: powderblue;">
 
-     <div class="row justify-content-center">
-      
-       <form class="form-container" id="form">
-        <style>
-          .form-container{
-            background: aliceblue;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px #000;
-            margin-top: 20px;
-            
+    <div class="container md-3">
+      <div class="container" style="background-color: powderblue;">
+        <div class="col-md-12 text-center">
 
-          }
-          </style>
-        
-        <div class="form-group">
-          <label for="name"><b>Name</b>&nbsp;:</label>
-          <input type="text" id="name" name="name" style="margin-left: 40px;"><br><br>
-        </div>
-        <div class="form-group">
-          <label for="username"><b>Username:</b></label>
-          <input type="text" id="username" name="username" style="margin-left: 25px;"><br><br>
-        </div>
-        <div class="form-group">
-        <label for="email-id"><b>Email-Id:</b></label>
-          <input type="email" id="email-id" name="email-id" style="margin-left: 30px;"><br>
-        </div>
-        <div class="form-group">
-        <label for="phone no"><b>PhoneNo.:</b></label>
-          <input type="tel" id="phoneno" name="phoneno" style="margin-left: 20px; margin-top: 10px;"><br><br>
-        </div>
-        <div class="form-group">
-        <label for="password"><b>Password:</b></label>
-          <input type="password" id="password" name="password" style="margin-left: 20px;"><br><br>
-        </div>
-        <div class="form-group">
-        <label for="confirmpassword"><b>Confirm <br>Password:</b></label>
-          <input type="password" id="confirmpassword" name="confirmpassword" style="margin-left: 20px; margin-top: 10px;"><br><br>
-          <button type="button"  class="btn btn-info btn-outline btn-block" id="btnId">Proceed</button>
-        </div>
-        </div>
+          <div class="row justify-content-center">
+
+            <form class="form-container" id="form">
+              <style>
+                .form-container {
+                  background: aliceblue;
+                  padding: 40px;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 10px 0px #000;
+                  margin-top: 20px;
+
+
+                }
+              </style>
+
+              <div class="form-group">
+                <label for="name"><b>Name</b>&nbsp;:</label>
+                <input type="text" id="name" name="name" style="margin-left: 40px;"><br><br>
+              </div>
+              <div class="form-group">
+
+                <label for="username"><b>Username: </b> </label><input name="username" id="username"
+                  pattern="[A-Za-z0-9]+" title="(letters and numbers only, no punctuation or special
+                  characters)" style="margin-left: 20px;">
+
+                <br><br>
+              </div>
+              <div class="form-group">
+                <label for="email-id"><b>Email-Id:</b></label>
+                <input type="email" id="email-id" name="email-id" style="margin-left: 30px;"><br>
+              </div>
+              <div class="form-group">
+                <label for="phone no"><b>PhoneNo.:</b></label>
+                <input type="tel" id="phoneno" name="phoneno" style="margin-left: 20px; margin-top: 10px;" maxlength="15"><br><br>
+              </div>
+              <div class="form-group">
+                <label for="pwd"><b>Password:</b> </label>
+                <input type="password" id="password" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                  style="margin-left: 20px;"><br><br>
+              </div>
+              <div class="form-group">
+                <label for="confirmpassword"><b>Confirm <br>Password:</b></label>
+                <input type="password" id="confirmpassword" name="confirmpassword"
+                  style="margin-left: 20px; margin-top: 10px;"><br><br>
+                <button type="submit" class="btn btn-info btn-outline btn-block" id="btnId">Proceed</button>
+              </div>
+          </div>
         </div>
       </div>
-      
-    </form>
- </div>
- </div>
- </div>
- 
+
+      </form>
+    </div>
+  </div>
+  </div>
+
 
 
 </body>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/static/js/register.js"></script>
+
 </html>

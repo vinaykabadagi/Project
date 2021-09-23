@@ -112,16 +112,19 @@ def admin_videos(request):
 #     )
 
 def userReg(request):
-    lclId = User.objects.count()
-    lclId = lclId + 1
-    User.objects.create(
-        user_id = lclId,
-        user_un = request.POST['username'],
-        user_name = request.POST["name"],
-        user_email = request.POST['email-id'],
-        user_phone = request.POST['phoneno'],
-        user_pw = request.POST['password'],
-        user_status = "0",
-        user_ChannelName = ""
-    )
-    return HttpResponse()
+    if User.objects.filter(user_un=request.POST['username']).exists():
+        return HttpResponse("10")
+    else:
+        lclId = User.objects.count()
+        lclId = lclId + 1
+        User.objects.create(
+            user_id = lclId,
+            user_un = request.POST['username'],
+            user_name = request.POST["name"],
+            user_email = request.POST['email-id'],
+            user_phone = request.POST['phoneno'],
+            user_pw = request.POST['password'],
+            user_status = "0",
+            user_ChannelName = ""
+        )
+        return HttpResponse("1")

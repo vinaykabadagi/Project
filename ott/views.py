@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render
 from ott.models import AdminMaster
 from ott.models import User
@@ -112,12 +113,15 @@ def admin_videos(request):
 
 def userReg(request):
     lclId = User.objects.count()
-    lclId = lclId + 1;
+    lclId = lclId + 1
     User.objects.create(
         user_id = lclId,
-        user_un = request.POST['Username'],
-        user_name = request.POST["Name"],
-        user_email = request.POST['Email-Id'],
-        user_phone = request.POST['PhoneNo.'],
-        user_pw = request.POST['Password']
+        user_un = request.POST['username'],
+        user_name = request.POST["name"],
+        user_email = request.POST['email-id'],
+        user_phone = request.POST['phoneno'],
+        user_pw = request.POST['password'],
+        user_status = "0",
+        user_ChannelName = ""
     )
+    return HttpResponse()

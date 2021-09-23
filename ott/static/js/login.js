@@ -21,9 +21,15 @@ $.ajax({
 	processData: false,
 	contentType: false,
 	success: function (response) {
+		if (response == "11") {
 		alert("Login successful");
 		window.location = "/home/";
 	}
+	else if(response == "12"){
+		alert("Login not successful,Register!");
+		window.location = "/register/";
+	}
+}
 });
 });
 });

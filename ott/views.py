@@ -2,6 +2,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 from ott.models import AdminMaster
 from ott.models import User
+from django.contrib.auth import authenticate, login
 
 
 
@@ -131,10 +132,12 @@ def userReg(request):
 
 
 def userLogin(request): 
-        lclId = User.objects.count()
-        lclId = lclId + 1
-        User.objects.create(
-            user_name = request.POST["name"],
-            user_pw = request.POST['password'],
-         )
+    user_name = request.POST['username']
+    user_pw = request.POST['password']
+    user = authenticate(request, username=user_name, password=user_pw)
+    if user is not None:
+        login(request, user)
+        return HttpResponse("11")
+    else:
+        return HttpResponse("12")
          

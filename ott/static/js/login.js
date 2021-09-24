@@ -2,9 +2,11 @@ $(document).ready(function () {
   $("#login").click(function () {
     if ($("#name").val() == "") {
       alert("Please Enter Name");
+      return false;
     }
     if ($("#password").val() == "") {
       alert("Please Enter Password");
+      return false;
     }
 
     let formData = new FormData();

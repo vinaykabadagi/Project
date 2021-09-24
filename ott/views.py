@@ -133,7 +133,14 @@ def userReg(request):
 
 def userLogin(request): 
     if User.objects.filter(user_un=request.POST['name'], user_pw=request.POST['password']).exists():
+        jsonData= User.objects.filter(user_un=request.POST['name']).values();
+        # print(jsonData)
+        data=list(jsonData)
+        listValue = data[0]
+        request.session['Email'] = listValue['user_email'];
+        print(request.session['Email'])
         return HttpResponse("11")
+    
     else:
         return HttpResponse("12")
-         
+    

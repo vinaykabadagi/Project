@@ -132,11 +132,7 @@ def userReg(request):
 
 
 def userLogin(request): 
-    user_name = request.POST['username']
-    user_pw = request.POST['password']
-    user = authenticate(request, username=user_name, password=user_pw)
-    if user is not None:
-        login(request, user)
+    if User.objects.filter(user_un=request.POST['name'], user_pw=request.POST['password']).exists():
         return HttpResponse("11")
     else:
         return HttpResponse("12")

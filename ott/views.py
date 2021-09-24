@@ -5,7 +5,6 @@ from ott.models import User
 from django.contrib.auth import authenticate, login
 
 
-
 # Create your views here.
 
 
@@ -112,6 +111,7 @@ def admin_videos(request):
 #         admin_un = request.POST[]
 #     )
 
+
 def userReg(request):
     if User.objects.filter(user_un=request.POST['username']).exists():
         return HttpResponse("10")
@@ -119,28 +119,26 @@ def userReg(request):
         lclId = User.objects.count()
         lclId = lclId + 1
         User.objects.create(
-            user_id = lclId,
-            user_un = request.POST['username'],
-            user_name = request.POST["name"],
-            user_email = request.POST['email-id'],
-            user_phone = request.POST['phoneno'],
-            user_pw = request.POST['password'],
-            user_status = "0",
-            user_ChannelName = ""
+            user_id=lclId,
+            user_un=request.POST['username'],
+            user_name=request.POST["name"],
+            user_email=request.POST['email-id'],
+            user_phone=request.POST['phoneno'],
+            user_pw=request.POST['password'],
+            user_status="0",
+            user_ChannelName=""
         )
         return HttpResponse("1")
 
 
-def userLogin(request): 
+def userLogin(request):
     if User.objects.filter(user_un=request.POST['name'], user_pw=request.POST['password']).exists():
-        jsonData= User.objects.filter(user_un=request.POST['name']).values();
-        # print(jsonData)
-        data=list(jsonData)
+        jsonData = User.objects.filter(user_un=request.POST['name']).values()
+        data = list(jsonData)
         listValue = data[0]
-        request.session['Email'] = listValue['user_email'];
+        request.session['Email'] = listValue['user_email']
         print(request.session['Email'])
         return HttpResponse("11")
-    
+
     else:
         return HttpResponse("12")
-    

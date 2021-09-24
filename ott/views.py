@@ -126,14 +126,21 @@ def userReg(request):
             user_phone = request.POST['phoneno'],
             user_pw = request.POST['password'],
             user_status = "0",
-            user_ChannelName = ""
+            user_ChannelName = "A"
         )
         return HttpResponse("1")
 
 
 def userLogin(request): 
     if User.objects.filter(user_un=request.POST['name'], user_pw=request.POST['password']).exists():
+        jsonData= User.objects.filter(user_un=request.POST['name']).values();
+        # print(jsonData)
+        data=list(jsonData)
+        listValue = data[0]
+        request.session['Email'] = listValue['user_email'];
+        print(request.session['Email'])
         return HttpResponse("11")
+    
     else:
         return HttpResponse("12")
-         
+    

@@ -6,10 +6,10 @@ $(document).ready(function () {
   $("#btnId").click(function () {
     let usernameValue = $("#username").val();
     let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
-	let pattern= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-	let patt= /^[A-Za-z0-9]+$/;
+    let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    let patt = /^[A-Za-z0-9]+$/;
     let s = $("#email-id").val();
-	let y = $("#password").val();
+    let y = $("#password").val();
     if ($("#name").val() == "") {
       alert("Please Enter Name");
       return false;
@@ -17,8 +17,14 @@ $(document).ready(function () {
     if ($("#username").val() == "") {
       alert("Please Enter Username");
       return false;
-    } else if (usernameValue.length < 3 || usernameValue.length > 10|| patt.test(usernameValue) == 0) {
-      alert("**length of username must be between 3 and 10");
+    } else if (
+      usernameValue.length < 3 ||
+      usernameValue.length > 10 ||
+      patt.test(usernameValue) == 0
+    ) {
+      alert(
+        "**length of username must be between 3 and 10 **no special charactrers"
+      );
       return false;
     }
     if ($("#email-id").val() == "" || regex.test(s) == 0) {
@@ -33,7 +39,9 @@ $(document).ready(function () {
       alert("Please Enter Password");
       return false;
     } else if ($("#password").val().length < 5 || pattern.test(y) == 0) {
-      alert("**length of password must be at least 5 or enter your password with validation");
+      alert(
+        "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+      );
       return false;
     }
 

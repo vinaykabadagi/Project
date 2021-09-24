@@ -126,7 +126,7 @@ def userReg(request):
             user_phone = request.POST['phoneno'],
             user_pw = request.POST['password'],
             user_status = "0",
-            user_ChannelName = ""
+            user_ChannelName = "A"
         )
         return HttpResponse("1")
 

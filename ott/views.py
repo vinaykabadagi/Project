@@ -49,14 +49,18 @@ def videosPage(request):
 
 
 def settingsPage(request):
-    # jsonData = User.objects.filter(user_email=request.session["Email"]).values()
-    # data = (jsonData)
-    # print(type(data))
-    dictValues = {
-        "name":"Akshata",
-        "mobile":"99999999",
-    }
-    return render(request, 'web/settings.html', dictValues)
+    jsonData = User.objects.filter(user_email=request.session["Email"]).values()
+    data = (jsonData)
+    print(type(data))
+    print(data)
+    articles_list = list(data)
+    print(articles_list)
+    print(type(articles_list[0]))
+    # dictValues = {
+    #     "name":"Akshata",
+    #     "mobile":"99999999",
+    # }
+    return render(request, 'web/settings.html', articles_list[0])
 
 
 def view1page(request):

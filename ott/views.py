@@ -49,7 +49,8 @@ def videosPage(request):
 
 
 def settingsPage(request):
-    jsonData = User.objects.filter(user_email=request.session["Email"]).values()
+    jsonData = User.objects.filter(
+        user_email=request.session["Email"]).values()
     data = (jsonData)
     print(type(data))
     print(data)
@@ -148,8 +149,16 @@ def userLogin(request):
         data = list(jsonData)
         listValue = data[0]
         request.session['Email'] = listValue['user_email']
-        print(request.session['Email'])
+        print(request.session)
         return HttpResponse("11")
 
     else:
         return HttpResponse("12")
+
+
+def Logout(request):
+    try:
+        del request.session['Email']
+    except KeyError:
+        pass
+    return HttpResponse("29")

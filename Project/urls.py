@@ -45,6 +45,7 @@ urlpatterns = [
     path('reported_videos/', views.reported_videos, name="reported_videos"),
     path('user_registeration/',views.userReg),
     path('user_login/',views.userLogin),
+    path('user_logout/',views.Logout),
 
 
 ]

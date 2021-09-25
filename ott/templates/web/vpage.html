@@ -62,13 +62,17 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="d-flex justify-content-between">
+          {% if 'Email' in request.session %}
           <button type="button" class="btn btn-outline-primary">Like</button>
-
           <button type="button" class="btn btn-outline-primary">Watchlist</button>
+          {% else %}
+          <a href="/login/"><button type="button" class="btn btn-outline-primary">Like</button></a>
+          <a href="/login/"><button type="button" class="btn btn-outline-primary">Watchlist</button></a>
+          {% endif %}
           <button type="button" class="btn btn-outline-primary">Share</button>
         </div>
       </div>
-     
+
 
     </div>
 
@@ -211,7 +215,7 @@
 
     </div>
   </div>
- 
+
 
 
 

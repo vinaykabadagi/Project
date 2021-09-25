@@ -49,9 +49,9 @@ def videosPage(request):
 
 
 def settingsPage(request):
-    jsonData = User.objects.filter(user_email=request.session["Email"]).values()
-    # data = dict(jsonData)
-    # print(data)
+    # jsonData = User.objects.filter(user_email=request.session["Email"]).values()
+    # data = (jsonData)
+    # print(type(data))
     dictValues = {
         "name":"Akshata",
         "mobile":"99999999",

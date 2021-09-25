@@ -84,7 +84,7 @@
           }
           </style>
 
-<div class="container md-3"> 
+<div class="container md-3 "> 
           <div class="container">
   <div class="card" style="width:400px">
     <img class="card-img-top" src="img_avatar1.png" alt=" " style="width:100%">
@@ -95,7 +95,7 @@
       <div class="container">
  <!--  <h2>Modal Login Example</h2> -->
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-primary btn-lg" id="myBtn">Edit</button>
+  <button type="button" class="btn btn-primary btn-lg" id="edit1">Edit</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -120,7 +120,7 @@
             <!-- <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
             </div> -->
-              <button type="submit" class="btn btn-success btn-block">Edit</button>
+              <button type="submit" class="btn btn-success btn-block" id="myBtn">Edit</button>
           </form>
         </div>
       </div>
@@ -129,15 +129,15 @@
 </div>
 <script>
 $(document).ready(function(){
-  $("#myBtn").click(function(){
+  $("#edit1").click(function(){
     $("#myModal").modal();
   });
 });
 </script>
 </div>
 </div>
-   <div class="container md-3"> 
-          <div class="container">
+   <div class="container md-3 col-sm-19"> 
+          <div class="container mt-3">
   <div class="card" style="width:400px">
     <img class="card-img-top" src="img_avatar1.png" alt=" " style="width:100%">
     <div class="card-body">
@@ -147,7 +147,7 @@ $(document).ready(function(){
       <div class="container">
  <!--  <h2>Modal Login Example</h2> -->
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-primary btn-lg" id="myBtn">Edit</button>
+  <button type="button" class="btn btn-primary btn-lg" id="edit">Edit</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -172,7 +172,7 @@ $(document).ready(function(){
             <!-- <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
             </div> -->
-              <button type="submit" class="btn btn-success btn-block">Edit</button>
+              <button type="submit" class="btn btn-success btn-block" id="myBtn">Edit</button>
           </form>
         </div>
       </div>
@@ -181,7 +181,7 @@ $(document).ready(function(){
 </div>
 <script>
 $(document).ready(function(){
-  $("#myBtn").click(function(){
+  $("#edit").click(function(){
     $("#myModal").modal();
   });
 });

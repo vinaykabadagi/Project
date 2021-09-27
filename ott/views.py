@@ -94,6 +94,9 @@ def Analytics(request):
 def myprofilePage(request):
     return render(request, 'web/myprofile.html')
 
+def buyplanPage(request):
+    return render(request, 'web/buyplan.html')
+
 
 def adminPage(request):
     return render(request, 'admin/dashboard.html')
@@ -176,3 +179,11 @@ def Logout(request):
     except KeyError:
         pass
     return HttpResponse("29")
+
+def updateView(request):
+    User.objects.filter(user_email=request.session['Email']).update(
+            user_un=request.POST['username'],
+            user_name=request.POST["name"],
+            user_email=request.POST['email-id']
+        )
+    

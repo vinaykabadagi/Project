@@ -28,7 +28,7 @@ urlpatterns = [
     path('register/', views.registerPage, name="register"),
     path('vpage/', views.vPage, name="vpage"),
     path('seemore/', views.seemorePage, name="seemore"),
-    path('buy/', views.removeAdsPage, name="remove Ads"),
+    path('buyplan/', views.buyplanPage, name="buyplan"),
     path('videos/', views.videosPage, name="videos"),
     path('settings/', views.settingsPage, name="settings"),
     path('view1page/', views.view1page, name="view1page"),
@@ -48,6 +48,9 @@ urlpatterns = [
     path('user_login/',views.userLogin),
     path('user_logout/',views.Logout),
     path('channelview/',views.channelview),
+    path('user_update/',views.updateView),
+
+    
 
 
 ]

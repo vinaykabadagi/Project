@@ -11,6 +11,7 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="../../static/css/style.css" />
+    <script src="../../static/js/logout.js"></script>
     <title>Movies</title>
     <style>
         .scrolling-wrapper {
@@ -62,13 +63,22 @@
 
                 </div>
                 <div class="col-4">
-                    <div class="d-flex justify-content-end"><a href="/login/"><button type="button"
-                                class="btn btn-outline-light">Login</button></a>&nbsp;
-                        <a href="/register/"><button type="button" class="btn btn-warning">Sign-up</button></a>&nbsp;&nbsp;
+                    {% if 'Email' in request.session %}
+                    <div class="d-flex justify-content-end">
                         <a href="/settings/"><img src="../../static/media/gear-24.png" alt="settings" width="38px"
                                 height="38px" /></a>&nbsp;&nbsp;
                         <a href="/myprofile/"><img src="../../static/media/myprofile.png" alt="myprofile" width="38px"
                                 height="38px" /></a>
+                    </div>
+
+                    {% else %}
+                    <div class="d-flex justify-content-end"><a href="/login/"><button type="button"
+                                class="btn btn-outline-light">Login</button></a>&nbsp;
+                        <a href="/register/"><button type="button"
+                                class="btn btn-warning">Sign-up</button></a>&nbsp;&nbsp;
+
+                        {% endif %}
+
                     </div>
 
                 </div>

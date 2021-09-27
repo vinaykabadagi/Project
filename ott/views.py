@@ -94,6 +94,9 @@ def adminPage(request):
 def uploadPage(request):
     return render(request, 'admin/upload.html')
 
+def uploadformPage(request):
+    return render(request, 'web/uploadform.html')
+
 def subscriptionPage(request):
     return render(request, 'web/subscription.html')
 

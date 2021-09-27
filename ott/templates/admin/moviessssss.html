@@ -1,0 +1,167 @@
+{% extends './base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/dashboard/">
+                            <span data-feather="home"></span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/upload/">
+                            <span data-feather="file"></span>
+                            Upload
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/userlist/">
+                            <span data-feather="users"></span>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="movies"></span>
+                            Movies
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="series"></span>
+                            Series
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="songs"></span>
+                            Songs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin_videos/">
+                            <span data-feather="videos"></span>
+                            Videos
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+      <div class="row mt-6">
+        <div class="col-sm-4">
+
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Movie title</h5>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container col-sm-8">
+          <h4 style="color: powderblue; margin-left: 50px; margin-top: 30px;">Genre : Horror<br><br><br>Views:260k<br><br><br>Likes:140k</h4>
+        </div>
+</div>
+</div>
+<hr style="color: powderblue;">
+
+<div class="container-fluid">
+      <div class="row mt-6">
+        <div class="col-sm-4">
+
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Movie title</h5>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container col-sm-8">
+          <h4 style="color: powderblue; margin-left: 50px; margin-top: 30px;">Genre : Romantic<br><br><br>Views:60k<br><br><br>Likes:40k</h4>
+        </div>
+</div>
+</div>
+<hr style="color: powderblue;">
+<div class="container-fluid">
+      <div class="row mt-6">
+        <div class="col-sm-4">
+
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Movie title</h5>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container col-sm-8">
+          <h4 style="color: powderblue; margin-left: 50px; margin-top: 30px;">Genre : Thriller<br><br><br>Views:700k<br><br><br>Likes:400k</h4>
+        </div>
+</div>
+</div>
+<hr style="color: powderblue;">
+<h3 style="color: powderblue;">Genre Based Views:400k</h3>
+<br>
+<hr style="color: powderblue;">
+
+<div class="row">
+<div class="col-sm-4">
+<h3 style="color: powderblue;">Horror Views:990K</h3>
+</div>
+
+<div class="col-sm-4">
+<h3 style="color: powderblue;">Romantic Views:12M</h3>
+</div>
+
+<div class="col-sm-4">
+<h3 style="color: powderblue;">Thriller Views:780K</h3>
+</div>
+
+<hr style="color: powderblue;">
+
+<h3 class="row mt-2" style="color: powderblue;">&nbsp;Most Liked:</h3>
+    <div class="container-fluid">
+      <div class="row mt-2">
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title text-start">Movie title <a href="#!" class="btn btn-primary float-end">Watch</a></h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 d-none d-lg-block">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title text-start">Movie title <a href="#!" class="btn btn-primary float-end">Watch</a></h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4 d-none d-lg-block">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/183.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title text-start">Movie title <a href="#!" class="btn btn-primary float-end">Watch</a></h5>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+</div>
+    </div>
+</div>
+{% endblock %}

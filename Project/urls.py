@@ -30,6 +30,7 @@ urlpatterns = [
     path('seemore/', views.seemorePage, name="seemore"),
     path('buyplan/', views.buyplanPage, name="buyplan"),
     path('videos/', views.videosPage, name="videos"),
+    path('uploadform/', views.uploadformPage, name="uploadform"),
     path('settings/', views.settingsPage, name="settings"),
     path('view1page/', views.view1page, name="view1page"),
     path('mychannel/', views.mychannel, name="mychannel"),

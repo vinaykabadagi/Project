@@ -17,6 +17,7 @@ class User(models.Model):
     user_pw = models.TextField(max_length=100)
     user_ChannelName = models.CharField(max_length=25, unique=True)
     user_status = models.CharField(max_length=8)
+    user_image=models.ImageField(upload_to="ott/static/media/images_users", default="ott/static/media/myprofile.png")
 
 
 class Channel(models.Model):

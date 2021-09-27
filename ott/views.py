@@ -50,22 +50,14 @@ def videosPage(request):
 
 def settingsPage(request):
     jsonData = User.objects.filter(
-    user_email=request.session["Email"]).values()
+        user_email=request.session["Email"]).values()
     data = (jsonData)
     print(type(data))
     print(data)
     articles_list = list(data)
-    # print(articles_list)
-    # print(type(articles_list[0]))
-    # dictValues = {
-    #     "name":"Akshata",
-    #     "mobile":"99999999",
-    # }
-    # listValue=articles_list[0]
-    # request.session["Email"]=listValue["user_email"]
-    # User.objects.filter(user_un=request.session["Email"]).update("user_un")
-    # User.objects.filter(user_name=request.session["Email"]).update("user_name")
-    # User.objects.filter(user_un=request.session["Email"]).update("user_email" )
+    print(articles_list)
+    print(type(articles_list[0]))
+
     return render(request, 'web/settings.html', articles_list[0])
     
 
@@ -93,9 +85,6 @@ def Analytics(request):
 
 def myprofilePage(request):
     return render(request, 'web/myprofile.html')
-
-def buyplanPage(request):
-    return render(request, 'web/buyplan.html')
 
 
 def adminPage(request):
@@ -179,11 +168,3 @@ def Logout(request):
     except KeyError:
         pass
     return HttpResponse("29")
-
-def updateView(request):
-    User.objects.filter(user_email=request.session['Email']).update(
-            user_un=request.POST['username'],
-            user_name=request.POST["name"],
-            user_email=request.POST['email-id']
-        )
-    

@@ -51,10 +51,10 @@ $(document).ready(function () {
     $("#vinay1").click(function () {
         let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-        if ($("#password").val() == "") {
+        if ($("#newpassword").val() == "") {
             alert("Please Enter Password");
             return false;
-          } else if ($("#password").val().length < 5 || pattern.test(y) == 0) {
+          } else if ($("#newpassword").val().length < 5 || pattern.test(y) == 0) {
             alert(
               "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
             );
@@ -66,20 +66,20 @@ $(document).ready(function () {
             return false;
           }
       
-          if ($("#confirmpassword").val() != $("#password").val()) {
+          if ($("#confirmpassword").val() != $("#newpassword").val()) {
             alert("Please Enter Password and Confirm Password Same");
             return false;
           }
       
           let formData = new FormData();
-          formData.append("curpassword", $("#curpassword").val());
           formData.append("password", $("#password").val());
+          formData.append("newpassword", $("#newpassword").val());
           formData.append("confirmpassword", $("#confirmpassword").val());
           formData.append(
             "csrfmiddlewaretoken",
             $("input[name=csrfmiddlewaretoken]").val()
           );
-          
+
           $.ajax({
             url: "/user_update/",
             type: "POST",

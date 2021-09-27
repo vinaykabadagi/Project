@@ -47,4 +47,50 @@ $(document).ready(function () {
         },
       });
     });
+
+    $("#vinay1").click(function () {
+        let pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+        if ($("#password").val() == "") {
+            alert("Please Enter Password");
+            return false;
+          } else if ($("#password").val().length < 5 || pattern.test(y) == 0) {
+            alert(
+              "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+            );
+            return false;
+          }
+      
+          if ($("#confirmpassword").val() == "") {
+            alert("Please Confirm your Password");
+            return false;
+          }
+      
+          if ($("#confirmpassword").val() != $("#password").val()) {
+            alert("Please Enter Password and Confirm Password Same");
+            return false;
+          }
+      
+          let formData = new FormData();
+          formData.append("curpassword", $("#curpassword").val());
+          formData.append("password", $("#password").val());
+          formData.append("confirmpassword", $("#confirmpassword").val());
+          formData.append(
+            "csrfmiddlewaretoken",
+            $("input[name=csrfmiddlewaretoken]").val()
+          );
+          
+          $.ajax({
+            url: "/user_update/",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+             
+                window.location = "/home/";
+    
+            },
+          });
+    });
   });

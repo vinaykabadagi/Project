@@ -57,7 +57,15 @@ def settingsPage(request):
     articles_list = list(data)
     print(articles_list)
     print(type(articles_list[0]))
-
+    # dictValues = {
+    #     "name":"Akshata",
+    #     "mobile":"99999999",
+    # }
+    # listValue=articles_list[0]
+    # request.session["Email"]=listValue["user_email"]
+    # User.objects.filter(user_un=request.session["Email"]).update("user_un")
+    # User.objects.filter(user_name=request.session["Email"]).update("user_name")
+    # User.objects.filter(user_un=request.session["Email"]).update("user_email" )
     return render(request, 'web/settings.html', articles_list[0])
     
 
@@ -86,6 +94,9 @@ def Analytics(request):
 def myprofilePage(request):
     return render(request, 'web/myprofile.html')
 
+def buyplanPage(request):
+    return render(request, 'web/buyplan.html')
+
 
 def adminPage(request):
     return render(request, 'admin/dashboard.html')
@@ -93,6 +104,9 @@ def adminPage(request):
 
 def uploadPage(request):
     return render(request, 'admin/upload.html')
+
+def uploadformPage(request):
+    return render(request, 'web/uploadform.html')
 
 def subscriptionPage(request):
     return render(request, 'web/subscription.html')
@@ -168,3 +182,10 @@ def Logout(request):
     except KeyError:
         pass
     return HttpResponse("29")
+
+def updateView(request):
+    User.objects.filter(user_email=request.session['Email']).update(
+            user_un=request.POST['username'],
+            user_name=request.POST["name"],
+            user_email=request.POST['email-id']
+        )

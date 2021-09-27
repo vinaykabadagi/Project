@@ -94,6 +94,9 @@ def Analytics(request):
 def myprofilePage(request):
     return render(request, 'web/myprofile.html')
 
+def buyplanPage(request):
+    return render(request, 'web/buyplan.html')
+
 
 def adminPage(request):
     return render(request, 'admin/dashboard.html')

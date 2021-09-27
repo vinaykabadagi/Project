@@ -101,6 +101,15 @@ def buyplanPage(request):
 def adminPage(request):
     return render(request, 'admin/dashboard.html')
 
+def manalyticsPage(request):
+    return render(request, 'admin/manalytics.html')
+
+def sanalyticsPage(request):
+    return render(request, 'admin/sanalytics.html')
+
+def songadminPage(request):
+    return render(request, 'admin/songadmin.html')
+
 
 def uploadPage(request):
     return render(request, 'admin/upload.html')

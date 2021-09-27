@@ -40,8 +40,8 @@ def seemorePage(request):
     return render(request, 'web/seemore.html')
 
 
-def removeAdsPage(request):
-    return render(request, 'web/buy.html')
+def buyplanPage(request):
+    return render(request, 'web/buyplan.html')
 
 
 def videosPage(request):

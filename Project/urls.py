@@ -48,7 +48,7 @@ urlpatterns = [
     path('user_login/',views.userLogin),
     path('user_logout/',views.Logout),
     path('channelview/',views.channelview),
-    # path('user_update/',views.updateView),
+    path('user_update/',views.updateView),
 
     
 

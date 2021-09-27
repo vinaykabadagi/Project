@@ -105,6 +105,9 @@ def adminPage(request):
 def uploadPage(request):
     return render(request, 'admin/upload.html')
 
+def uploadformPage(request):
+    return render(request, 'web/uploadform.html')
+
 def subscriptionPage(request):
     return render(request, 'web/subscription.html')
 
@@ -188,5 +191,5 @@ def updateView(request):
         )
     if User.objects.filter(user_pw=request.POST['password']).exists():
             User.objects.filter(user_email=request.session['Email']).update(
-            user_pw=request.POST["password"],
+            user_pw=request.POST["newpassword"],
                      )

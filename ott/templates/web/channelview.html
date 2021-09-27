@@ -9,12 +9,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
 
   <style>  
-  .fa, .fab, .fal, .far, .fas {
-    padding-top: 1vw;
-}
     .navbar {
             position: fixed;
             top: 0;
@@ -30,6 +27,29 @@
             left: 50%;
             transform: translatex(-50%);
         }
+        .circular-img
+				{
+					display:inline-block;
+					padding:10px;
+					border-radius:50%;
+					background:black;
+					height:80px;
+					width:80px;
+				}
+        .circular-img img
+        {
+					display:inline-block;
+					margin-top:5px;
+					margin-left:10px
+        }
+@media only screen and (max-width: 640px) {
+.circular-image{
+        border-radius:50%;
+}
+}
+.fa, .fab, .fal, .far, .fas {
+    padding-top: 1vw;
+}
     </style>
 </head>
 <br>
@@ -40,7 +60,7 @@
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item" style="margin-left: 15px;">
-            <a href="/home/" style="color: black;">
+            <a href="/home/" style="color: rgb(150, 20, 20);">
               <i class="fas fa-home"></i>
             </a>
         </li>
@@ -52,98 +72,105 @@
         </div>
     </ul>
 </nav><br>
-    
-<!-- <nav class="navbar navbar-inverse visible-xs">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"><img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" height="40px" width="40px" alt=""></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Dashboard</a></li>
-        <li><a href="/Channel_Content/">Content</a></li>
-        <li><a href="/Analytics/">Analytics</a></li>
-        <li><a href="/Channel_settings/">Settings</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
+
 
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
       <br> 
-      <h2>Channel Name</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#">Dashboard</a></li>
-        <li><a href="/Channel_Content/">Content</a></li>
-        <li><a href="/Analytics/">Analytics</a></li>
-        <li><a href="/Channel_settings/">Settings</a></li>
-      </ul><br>
+        <li><a href="/home/">Home</a></li>
+        <li><a href="/subscription/">My Subscriptions</a></li>
+        <li><a href="/liked/">Liked Videos</a></li>
+      </ul>
     </div>
     <br>
     <br>
     <br>
-    <div class="col-sm-9">
-      <div class="well">
-        <h4>Dashboard</h4>       
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Upload Video</h4>
-            <button class="btn btn-primary"><i class="bi bi-upload"></i> Upload</button> 
-          </div>
+    <div class="row">
+        <div class="col-sm-1">
+        <div class="circular-img">
+            <img src="http://www.cfweb.it/media/zoo/images/sito_internet_per_azienda_servizi_621cf280224599e012831b8467a5d304.png">
+        </div>  
         </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Total subscribers</h4>
-            <p>100 Million</p> 
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Total Views</h4>
-            <p>10 Million</p> 
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="well">
-            <h4>Watch time</h4>
-            <p>30%</p> 
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="well">
-            <h4>Top video</h4> 
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="well">
-            <h4>Most liked</h4>
-          </div>
-        </div>
-        
-      </div>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="well">
-            <h4>Most recent video</h4> 
-          </div>
-        </div>
-        
-      </div>
+        <div class="col-sm-3" >
+        <h1 style="margin-top: 7px;">Channel Name</h1>
+        <p style="margin-left: 10px;">1k Subscribers</p>
+        <hr>
+        </div>    
+    </div>
+    <div class="container">
+  <h3 class="page-header" id="youtube-gallery">Uploads</h3>
+  <div class="row">
+    <a href="https://www.youtube.com/watch?v=hvXotgxBOvk"
+       data-title="Boss: Capra Demon"
+       data-width="1024"
+       data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+      <button type="button" class="btn btn-play">
+        <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+      </button>
+      <img src="https://img.youtube.com/vi/hvXotgxBOvk/mqdefault.jpg" class="img-responsive">
+      <!-- <span style="color: black;">12k views</span> -->
+    </a>
+    
+    <a href="https://www.youtube.com/watch?v=MmCTJNr10xc" 
+       data-title="Boss: Ornstein & Smough"
+       data-width="1024"
+       data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+      <button type="button" class="btn btn-play">
+        <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+      </button>
+      <img src="//i1.ytimg.com/vi/MmCTJNr10xc/mqdefault.jpg" class="img-responsive">
+    </a>
+    <a href="https://www.youtube.com/watch?v=VXQuHSi0FqE"
+       data-title="Boss: Demon Firesage"
+       data-width="1024"
+       data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+      <button type="button" class="btn btn-play">
+        <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+      </button>
+      <img src="//i1.ytimg.com/vi/VXQuHSi0FqE/mqdefault.jpg" class="img-responsive">
+    </a>
+  </div>
+
+  <div class="container">
+    <h3 class="page-header" id="youtube-gallery">Popular Uploads</h3>
+    <div class="row">
+      <a href="https://www.youtube.com/watch?v=hvXotgxBOvk"
+         data-title="Boss: Capra Demon"
+         data-width="1024"
+         data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+        <button type="button" class="btn btn-play">
+          <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+        </button>
+        <img src="https://img.youtube.com/vi/hvXotgxBOvk/mqdefault.jpg" class="img-responsive">
+      </a>
+      <a href="https://www.youtube.com/watch?v=MmCTJNr10xc" 
+         data-title="Boss: Ornstein & Smough"
+         data-width="1024"
+         data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+        <button type="button" class="btn btn-play">
+          <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+        </button>
+        <img src="//i1.ytimg.com/vi/MmCTJNr10xc/mqdefault.jpg" class="img-responsive">
+      </a>
+      <a href="https://www.youtube.com/watch?v=VXQuHSi0FqE"
+         data-title="Boss: Demon Firesage"
+         data-width="1024"
+         data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+        <button type="button" class="btn btn-play">
+          <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+        </button>
+        <img src="//i1.ytimg.com/vi/VXQuHSi0FqE/mqdefault.jpg" class="img-responsive">
+      </a>
     </div>
   </div>
 </div>
+</div> 
+</div>
+<script>
+</script>
 
 </body>
 </html>
+  

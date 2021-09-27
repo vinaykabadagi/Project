@@ -114,13 +114,25 @@ def userlistPage(request):
 def watchhistoryPage(request):
     return render(request, 'web/watchhistory.html')
 
-
+def channelview(request):
+    return render(request,'web/channelview.html')
+    
 def reported_videos(request):
     return render(request, 'admin/reported_videos.html')
 
 
 def admin_videos(request):
     return render(request, 'admin/videos.html')
+
+
+
+# def userReg(request):
+#     lclId = AdminMaster.objects.count()
+#     lclId = lclId + 1;
+#     AdminMaster.objects.create(
+#         admin_id = lclId,
+#         admin_un = request.POST[]
+#     )
 
 
 def userReg(request):

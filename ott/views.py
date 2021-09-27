@@ -102,6 +102,9 @@ def adminPage(request):
 def uploadPage(request):
     return render(request, 'admin/upload.html')
 
+def subscriptionPage(request):
+    return render(request, 'web/subscription.html')
+
 
 def likedPage(request):
     return render(request, 'web/liked.html')

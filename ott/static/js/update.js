@@ -25,11 +25,6 @@ $(document).ready(function () {
         alert("Please Enter valid Email-id");
         return false;
       }
-      
-    
-      
-
-      
       let formData = new FormData();
       formData.append("name", $("#name").val());
       formData.append("username", $("#username").val());

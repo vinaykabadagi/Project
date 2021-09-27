@@ -61,11 +61,11 @@ def settingsPage(request):
     #     "name":"Akshata",
     #     "mobile":"99999999",
     # }
-    listValue=articles_list[0]
-    request.session["Email"]=listValue["user_email"]
-    User.objects.filter(user_un=request.session["Email"]).update("user_un")
-    User.objects.filter(user_name=request.session["Email"]).update("user_name")
-    User.objects.filter(user_un=request.session["Email"]).update("user_email")
+    # listValue=articles_list[0]
+    # request.session["Email"]=listValue["user_email"]
+    # User.objects.filter(user_un=request.session["Email"]).update("user_un")
+    # User.objects.filter(user_name=request.session["Email"]).update("user_name")
+    # User.objects.filter(user_un=request.session["Email"]).update("user_email" )
     return render(request, 'web/settings.html', articles_list[0])
     
 
@@ -101,10 +101,6 @@ def adminPage(request):
 
 def uploadPage(request):
     return render(request, 'admin/upload.html')
-
-
-def subscriptionPage(request):
-    return render(request, 'web/subscription.html')
 
 
 def likedPage(request):

@@ -193,3 +193,14 @@ def updateView(request):
             User.objects.filter(user_email=request.session['Email']).update(
             user_pw=request.POST["newpassword"],
                      )
+
+
+def uploadForm(request):
+    User.objects.filter(user_email=request.session['Email']).update(
+            v_title=request.POST['videoTitle'],
+            v_desc=request.POST["videoDesc"],
+            v_tags=request.POST['videoTags'],
+            v_cat=request.POST['videoCat'],
+            v_image=request.POST['videoImg'],
+
+        )

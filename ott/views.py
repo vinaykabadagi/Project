@@ -176,3 +176,13 @@ def Logout(request):
     except KeyError:
         pass
     return HttpResponse("29")
+
+def updateView(request):
+    lclId = User.objects.count()
+    lclId = lclId + 1
+    User.objects.create(
+            user_id=lclId,
+            user_un=request.POST['username'],
+            user_name=request.POST["name"],
+            user_email=request.POST['email-id']
+        )

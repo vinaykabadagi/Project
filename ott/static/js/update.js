@@ -70,7 +70,7 @@ $(document).ready(function () {
       );
       return false;
     }
-    if ($("#email-id").val() == "" || regex.test(s) == 0) {
+    if ($("#email-id").val() == "" || regex.test() == 0) {
       alert("Please Enter valid Email-id");
       return false;
     }
@@ -101,7 +101,7 @@ $(document).ready(function () {
     if ($("#newpassword").val() == "") {
       alert("Please Enter Password");
       return false;
-    } else if ($("#newpassword").val().length < 5 || pattern.test(y) == 0) {
+    } else if ($("#newpassword").val().length < 5 || pattern.test($("#newpassword").val()) == 0) {
       alert(
         "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
       );
@@ -128,7 +128,7 @@ $(document).ready(function () {
     );
 
     $.ajax({
-      url: "/user_update/",
+      url: "/update_password/",
       type: "POST",
       data: formData,
       processData: false,

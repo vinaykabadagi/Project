@@ -200,6 +200,7 @@ def updateView(request):
             user_email=request.POST['email-id'],
             user_image=request.FILES['usrProfile']
         )
+<<<<<<< Updated upstream
     return HttpResponse()
     # if User.objects.filter(user_pw=request.POST['password']).exists():
     #         User.objects.filter(user_email=request.session['Email']).update(
@@ -207,6 +208,16 @@ def updateView(request):
     #                  )
             
 
+=======
+    
+
+def updatePassword(request):
+    if User.objects.filter(user_pw=request.POST['password']).exists():
+        User.objects.filter(user_email=request.session['Email']).update(
+            user_pw=request.POST["newpassword"],
+                     )
+        return HttpResponse()
+>>>>>>> Stashed changes
 
 def uploadForm(request):
     User.objects.filter(user_email=request.session['Email']).create(

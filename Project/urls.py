@@ -53,8 +53,13 @@ urlpatterns = [
     path('user_logout/',views.Logout),
     path('channelview/',views.channelview),
     path('user_update/',views.updateView),
+<<<<<<< Updated upstream
     
     path('uploadForm',views.uploadForm)
+=======
+    path('update_password/',views.updatePassword),
+    path('uploadForm/',views.uploadForm)
+>>>>>>> Stashed changes
     
 
 

@@ -1,4 +1,5 @@
 $(document).ready(function () {
+<<<<<<< Updated upstream
   $("#vinay").click(function () {
     let usernameValue = $("#username").val();
     let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
@@ -18,6 +19,54 @@ $(document).ready(function () {
     ) {
       alert(
         "**length of username must be between 3 and 10 **no special charactrers"
+=======
+    $("#vinay").click(function () {
+      let usernameValue = $("#username").val();
+      let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
+      let patt = /^[A-Za-z0-9]+$/;
+      let s = $("#email-id").val();
+      if ($("#name").val() == "") {
+        alert("Please Enter Name");
+        return false;
+      }
+      if ($("#username").val() == "") {
+        alert("Please Enter Username");
+        return false;
+      } else if (
+        usernameValue.length < 3 ||
+        usernameValue.length > 10 ||
+        patt.test(usernameValue) == 0
+      ) {
+        alert(
+          "**length of username must be between 3 and 10 **no special charactrers"
+        );
+        return false;
+      }
+      if ($("#email-id").val() == "" || regex.test(s) == 0) {
+        alert("Please Enter valid Email-id");
+        return false;
+      }
+      if($("#usrProfile").val()==""){
+        alert("Please Select Profile Photo");
+        return false;
+      }
+    // let img = $("#usrProfile").val();
+    let img = document.getElementById('usrProfile');
+    // console.log(img);
+    let img1 = img.files[0];
+
+
+
+      let formData = new FormData();
+    
+      formData.append("name", $("#name").val());
+      formData.append("username", $("#username").val());
+      formData.append("email-id", $("#email-id").val());
+      formData.append("usrProfile",img1);
+      formData.append(
+        "csrfmiddlewaretoken",
+        $("input[name=csrfmiddlewaretoken]").val()
+>>>>>>> Stashed changes
       );
       return false;
     }

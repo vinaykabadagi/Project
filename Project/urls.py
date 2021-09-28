@@ -30,9 +30,6 @@ urlpatterns = [
     path('seemore/', views.seemorePage, name="seemore"),
     path('buyplan/', views.buyplanPage, name="buyplan"),
     path('videos/', views.videosPage, name="videos"),
-    path('manalytics/', views.manalyticsPage, name="manalytics"),
-    path('sanalytics/', views.sanalyticsPage, name="sanalytics"),
-    path('songadmin/', views.songadminPage, name="songadmin"),
     path('uploadform/', views.uploadformPage, name="uploadform"),
     path('settings/', views.settingsPage, name="settings"),
     path('view1page/', views.view1page, name="view1page"),
@@ -53,7 +50,7 @@ urlpatterns = [
     path('user_logout/',views.Logout),
     path('channelview/',views.channelview),
     path('user_update/',views.updateView),
-
+    path('uploadForm',views.uploadForm)
     
 
 

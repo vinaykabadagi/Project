@@ -205,7 +205,7 @@ def updateView(request):
 
 
 def uploadForm(request):
-    User.objects.filter(user_email=request.session['Email']).update(
+    User.objects.filter(user_email=request.session['Email']).create(
             v_title=request.POST['videoTitle'],
             v_desc=request.POST["videoDesc"],
             v_tags=request.POST['videoTags'],

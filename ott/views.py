@@ -49,14 +49,26 @@ def videosPage(request):
 
 
 def settingsPage(request):
-    jsonData = User.objects.filter(user_email=request.session["Email"]).values()
-    # data = dict(jsonData)
-    # print(data)
-    dictValues = {
-        "name":"Akshata",
-        "mobile":"99999999",
-    }
-    return render(request, 'web/settings.html', dictValues)
+    jsonData = User.objects.filter(
+        user_email=request.session["Email"]).values()
+    data = (jsonData)
+    print(type(data))
+    print(data)
+    articles_list = list(data)
+    print(articles_list)
+    print(type(articles_list[0]))
+    # dictValues = {
+    #     "name":"Akshata",
+    #     "mobile":"99999999",
+    # }
+    # listValue=articles_list[0]
+    # request.session["Email"]=listValue["user_email"]
+    # User.objects.filter(user_un=request.session["Email"]).update("user_un")
+    # User.objects.filter(user_name=request.session["Email"]).update("user_name")
+    # User.objects.filter(user_un=request.session["Email"]).update("user_email" )
+    return render(request, 'web/settings.html', articles_list[0])
+    
+
 
 
 def view1page(request):
@@ -82,13 +94,31 @@ def Analytics(request):
 def myprofilePage(request):
     return render(request, 'web/myprofile.html')
 
+def buyplanPage(request):
+    return render(request, 'web/buyplan.html')
+
 
 def adminPage(request):
     return render(request, 'admin/dashboard.html')
 
+def manalyticsPage(request):
+    return render(request, 'admin/manalytics.html')
+
+def sanalyticsPage(request):
+    return render(request, 'admin/sanalytics.html')
+
+def songadminPage(request):
+    return render(request, 'admin/songadmin.html')
+
 
 def uploadPage(request):
     return render(request, 'admin/upload.html')
+
+def uploadformPage(request):
+    return render(request, 'web/uploadform.html')
+
+def subscriptionPage(request):
+    return render(request, 'web/subscription.html')
 
 
 def likedPage(request):
@@ -102,13 +132,17 @@ def userlistPage(request):
 def watchhistoryPage(request):
     return render(request, 'web/watchhistory.html')
 
-
+def channelview(request):
+    return render(request,'web/channelview.html')
+    
 def reported_videos(request):
     return render(request, 'admin/reported_videos.html')
 
 
 def admin_videos(request):
     return render(request, 'admin/videos.html')
+
+
 
 # def userReg(request):
 #     lclId = AdminMaster.objects.count()
@@ -144,8 +178,38 @@ def userLogin(request):
         data = list(jsonData)
         listValue = data[0]
         request.session['Email'] = listValue['user_email']
-        print(request.session['Email'])
+        print(request.session)
         return HttpResponse("11")
 
     else:
         return HttpResponse("12")
+
+
+def Logout(request):
+    try:
+        del request.session['Email']
+    except KeyError:
+        pass
+    return HttpResponse("29")
+
+def updateView(request):
+    User.objects.filter(user_email=request.session['Email']).update(
+            user_un=request.POST['username'],
+            user_name=request.POST["name"],
+            user_email=request.POST['email-id']
+        )
+    if User.objects.filter(user_pw=request.POST['password']).exists():
+            User.objects.filter(user_email=request.session['Email']).update(
+            user_pw=request.POST["newpassword"],
+                     )
+
+
+def uploadForm(request):
+    User.objects.filter(user_email=request.session['Email']).create(
+            v_title=request.POST['videoTitle'],
+            v_desc=request.POST["videoDesc"],
+            v_tags=request.POST['videoTags'],
+            v_cat=request.POST['videoCat'],
+            v_image=request.POST['videoImg'],
+
+        )

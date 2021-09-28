@@ -28,8 +28,9 @@ urlpatterns = [
     path('register/', views.registerPage, name="register"),
     path('vpage/', views.vPage, name="vpage"),
     path('seemore/', views.seemorePage, name="seemore"),
-    path('buy/', views.removeAdsPage, name="remove Ads"),
+    path('buyplan/', views.buyplanPage, name="buyplan"),
     path('videos/', views.videosPage, name="videos"),
+    path('uploadform/', views.uploadformPage, name="uploadform"),
     path('settings/', views.settingsPage, name="settings"),
     path('view1page/', views.view1page, name="view1page"),
     path('mychannel/', views.mychannel, name="mychannel"),
@@ -38,6 +39,7 @@ urlpatterns = [
     path('Channel_settings/', views.Channel_settings, name="Channel_settings"),
     path('myprofile/', views.myprofilePage, name="myprofile"),
     path('upload/', views.uploadPage, name="upload"),
+    path('subscription/', views.subscriptionPage, name="subscription"),
     path('liked/', views.likedPage, name="liked"),
     path('userlist/', views.userlistPage, name="userlist"),
     path('watchhistory/', views.watchhistoryPage, name="watchhistory"),
@@ -45,6 +47,11 @@ urlpatterns = [
     path('reported_videos/', views.reported_videos, name="reported_videos"),
     path('user_registeration/',views.userReg),
     path('user_login/',views.userLogin),
+    path('user_logout/',views.Logout),
+    path('channelview/',views.channelview),
+    path('user_update/',views.updateView),
+    path('uploadForm',views.uploadForm)
+    
 
 
 ]

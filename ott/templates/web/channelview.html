@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
+
+  <style>  
+    .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 45px;
+            background-color: #00a087;
+        }
+
+        .navbar-nav.navbar-center {
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+        }
+        .circular-img
+				{
+					display:inline-block;
+					padding:10px;
+					border-radius:50%;
+					background:black;
+					height:80px;
+					width:80px;
+				}
+        .circular-img img
+        {
+					display:inline-block;
+					margin-top:5px;
+					margin-left:10px
+        }
+@media only screen and (max-width: 640px) {
+.circular-image{
+        border-radius:50%;
+}
+}
+.fa, .fab, .fal, .far, .fas {
+    padding-top: 1vw;
+}
+    </style>
+</head>
+<br>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-primary">
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item" style="margin-left: 15px;">
+            <a href="/home/" style="color: rgb(150, 20, 20);">
+              <i class="fas fa-home"></i>
+            </a>
+        </li>
+        <div class="nav navbar-nav navbar-center">
+            <img src="data:image/jpeg;base64,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"
+                alt="logo" style="width: 35px; height: 30px; margin-right: 10px;" />
+            <li style="margin-right:15px"><a href="/home/" class="text-dark"><b style="font-size: 20px;">name of
+                        webapp</b></a></li>
+        </div>
+    </ul>
+</nav><br>
+
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <br> 
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="/home/">Home</a></li>
+        <li><a href="/subscription/">My Subscriptions</a></li>
+        <li><a href="/liked/">Liked Videos</a></li>
+      </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-1">
+        <div class="circular-img">
+            <img src="http://www.cfweb.it/media/zoo/images/sito_internet_per_azienda_servizi_621cf280224599e012831b8467a5d304.png">
+        </div>  
+        </div>
+        <div class="col-sm-3" >
+        <h1 style="margin-top: 7px;">Channel Name</h1>
+        <p style="margin-left: 10px;">1k Subscribers</p>
+        <hr>
+        </div>    
+    </div>
+    <div class="container">
+  <h3 class="page-header" id="youtube-gallery">Uploads</h3>
+  <div class="row">
+    <a href="https://www.youtube.com/watch?v=hvXotgxBOvk"
+       data-title="Boss: Capra Demon"
+       data-width="1024"
+       data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+      <button type="button" class="btn btn-play">
+        <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+      </button>
+      <img src="https://img.youtube.com/vi/hvXotgxBOvk/mqdefault.jpg" class="img-responsive">
+      <!-- <span style="color: black;">12k views</span> -->
+    </a>
+    
+    <a href="https://www.youtube.com/watch?v=MmCTJNr10xc" 
+       data-title="Boss: Ornstein & Smough"
+       data-width="1024"
+       data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+      <button type="button" class="btn btn-play">
+        <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+      </button>
+      <img src="//i1.ytimg.com/vi/MmCTJNr10xc/mqdefault.jpg" class="img-responsive">
+    </a>
+    <a href="https://www.youtube.com/watch?v=VXQuHSi0FqE"
+       data-title="Boss: Demon Firesage"
+       data-width="1024"
+       data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+      <button type="button" class="btn btn-play">
+        <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+      </button>
+      <img src="//i1.ytimg.com/vi/VXQuHSi0FqE/mqdefault.jpg" class="img-responsive">
+    </a>
+  </div>
+
+  <div class="container">
+    <h3 class="page-header" id="youtube-gallery">Popular Uploads</h3>
+    <div class="row">
+      <a href="https://www.youtube.com/watch?v=hvXotgxBOvk"
+         data-title="Boss: Capra Demon"
+         data-width="1024"
+         data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+        <button type="button" class="btn btn-play">
+          <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+        </button>
+        <img src="https://img.youtube.com/vi/hvXotgxBOvk/mqdefault.jpg" class="img-responsive">
+      </a>
+      <a href="https://www.youtube.com/watch?v=MmCTJNr10xc" 
+         data-title="Boss: Ornstein & Smough"
+         data-width="1024"
+         data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+        <button type="button" class="btn btn-play">
+          <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+        </button>
+        <img src="//i1.ytimg.com/vi/MmCTJNr10xc/mqdefault.jpg" class="img-responsive">
+      </a>
+      <a href="https://www.youtube.com/watch?v=VXQuHSi0FqE"
+         data-title="Boss: Demon Firesage"
+         data-width="1024"
+         data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4 video">
+        <button type="button" class="btn btn-play">
+          <span class="glyphicon glyphicon-play" aria-label="Play"></span>
+        </button>
+        <img src="//i1.ytimg.com/vi/VXQuHSi0FqE/mqdefault.jpg" class="img-responsive">
+      </a>
+    </div>
+  </div>
+</div>
+</div> 
+</div>
+<script>
+</script>
+
+</body>
+</html>
+  

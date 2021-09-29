@@ -17,12 +17,7 @@ class User(models.Model):
     user_pw = models.TextField(max_length=100)
     user_ChannelName = models.CharField(max_length=25, unique=True)
     user_status = models.CharField(max_length=8)
-<<<<<<< Updated upstream
-    user_image=models.ImageField(upload_to="ott/static/media/images_users")
-=======
     user_image=models.ImageField(upload_to="ott/static/media/images_users", default="ott/static/media/myprofile.png")
-    
->>>>>>> Stashed changes
 
 
 class Channel(models.Model):
@@ -59,4 +54,3 @@ class videos(models.Model):
     v_wh = models.IntegerField()
     v_image = models.ImageField(upload_to="ott/static/media/images_videos")
     v_status = models.CharField(max_length=8)
-

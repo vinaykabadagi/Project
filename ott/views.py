@@ -67,8 +67,6 @@ def settingsPage(request):
     # User.objects.filter(user_name=request.session["Email"]).update("user_name")
     # User.objects.filter(user_un=request.session["Email"]).update("user_email" )
     return render(request, 'web/settings.html', articles_list[0])
-    
-
 
 
 def view1page(request):
@@ -94,6 +92,7 @@ def Analytics(request):
 def myprofilePage(request):
     return render(request, 'web/myprofile.html')
 
+
 def buyplanPage(request):
     return render(request, 'web/buyplan.html')
 
@@ -105,8 +104,10 @@ def adminPage(request):
 def uploadPage(request):
     return render(request, 'admin/upload.html')
 
+
 def uploadformPage(request):
     return render(request, 'web/uploadform.html')
+
 
 def subscriptionPage(request):
     return render(request, 'web/subscription.html')
@@ -123,25 +124,17 @@ def userlistPage(request):
 def watchhistoryPage(request):
     return render(request, 'web/watchhistory.html')
 
+
 def channelview(request):
-    return render(request,'web/channelview.html')
-    
+    return render(request, 'web/channelview.html')
+
+
 def reported_videos(request):
     return render(request, 'admin/reported_videos.html')
 
 
 def admin_videos(request):
     return render(request, 'admin/videos.html')
-
-
-
-# def userReg(request):
-#     lclId = AdminMaster.objects.count()
-#     lclId = lclId + 1;
-#     AdminMaster.objects.create(
-#         admin_id = lclId,
-#         admin_un = request.POST[]
-#     )
 
 
 def userReg(request):
@@ -183,9 +176,10 @@ def Logout(request):
         pass
     return HttpResponse("29")
 
+
 def updateView(request):
     User.objects.filter(user_email=request.session['Email']).update(
-            user_un=request.POST['username'],
-            user_name=request.POST["name"],
-            user_email=request.POST['email-id']
-        )
+        user_un=request.POST['username'],
+        user_name=request.POST["name"],
+        user_email=request.POST['email-id']
+    )

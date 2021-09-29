@@ -1,7 +1,3 @@
-// $(document).ready(function() {
-//    $("#form").validate();
-// });
-
 $(document).ready(function () {
   $("#btnId").click(function () {
     let usernameValue = $("#username").val();

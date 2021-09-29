@@ -50,7 +50,7 @@ urlpatterns = [
     path('user_logout/',views.Logout),
     path('channelview/',views.channelview),
     path('user_update/',views.updateView),
-
+    path('update_password/',views.updatePassword),
     
 
 

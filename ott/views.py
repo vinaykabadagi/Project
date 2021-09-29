@@ -183,3 +183,14 @@ def updateView(request):
         user_name=request.POST["name"],
         user_email=request.POST['email-id']
     )
+    return HttpResponse()
+
+
+def updatePassword(request):
+    if User.objects.filter(user_pw=request.POST['password']).exists():
+        User.objects.filter(user_email=request.session['Email']).update(
+            user_pw=request.POST["newpassword"]
+        )
+        return HttpResponse("dn")
+    else:
+        return print(User.objects.filter(user_pw=request.POST['password']))

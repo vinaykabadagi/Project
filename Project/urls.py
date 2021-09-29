@@ -35,6 +35,9 @@ urlpatterns = [
     path('view1page/', views.view1page, name="view1page"),
     path('mychannel/', views.mychannel, name="mychannel"),
     path('Analytics/', views.Analytics, name="Analytics"),
+    path('manalytics/', views.manalyticsPage, name="manalytics"),
+    path('sanalytics/', views.sanalyticsPage, name="sanalytics"),
+    path('songadmin/', views.songadminPage, name="songadmin"),
     path('Channel_Content/', views.Channel_Content, name="Channel_Content"),
     path('Channel_settings/', views.Channel_settings, name="Channel_settings"),
     path('myprofile/', views.myprofilePage, name="myprofile"),
@@ -50,7 +53,13 @@ urlpatterns = [
     path('user_logout/',views.Logout),
     path('channelview/',views.channelview),
     path('user_update/',views.updateView),
+<<<<<<< Updated upstream
+    
     path('uploadForm',views.uploadForm)
+=======
+    path('update_password/',views.updatePassword),
+    path('uploadForm/',views.uploadForm)
+>>>>>>> Stashed changes
     
 
 

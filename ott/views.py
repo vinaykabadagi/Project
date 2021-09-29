@@ -52,11 +52,11 @@ def settingsPage(request):
     jsonData = User.objects.filter(
         user_email=request.session["Email"]).values()
     data = (jsonData)
-    print(type(data))
-    print(data)
+    # print(type(data))
+    # print(data)
     articles_list = list(data)
-    print(articles_list)
-    print(type(articles_list[0]))
+    # print(articles_list)
+    # print(type(articles_list[0]))
     # dictValues = {
     #     "name":"Akshata",
     #     "mobile":"99999999",
@@ -178,7 +178,7 @@ def userLogin(request):
         data = list(jsonData)
         listValue = data[0]
         request.session['Email'] = listValue['user_email']
-        print(request.session)
+        # print(request.session)
         return HttpResponse("11")
 
     else:
@@ -193,16 +193,31 @@ def Logout(request):
     return HttpResponse("29")
 
 def updateView(request):
+    # print(request.session['Email'])
     User.objects.filter(user_email=request.session['Email']).update(
             user_un=request.POST['username'],
             user_name=request.POST["name"],
-            user_email=request.POST['email-id']
+            user_email=request.POST['email-id'],
+            user_image=request.FILES['usrProfile']
         )
+<<<<<<< Updated upstream
+    return HttpResponse()
+    # if User.objects.filter(user_pw=request.POST['password']).exists():
+    #         User.objects.filter(user_email=request.session['Email']).update(
+    #         user_pw=request.POST["newpassword"],
+    #                  )
+            
+
+=======
+    
+
+def updatePassword(request):
     if User.objects.filter(user_pw=request.POST['password']).exists():
-            User.objects.filter(user_email=request.session['Email']).update(
+        User.objects.filter(user_email=request.session['Email']).update(
             user_pw=request.POST["newpassword"],
                      )
-
+        return HttpResponse()
+>>>>>>> Stashed changes
 
 def uploadForm(request):
     User.objects.filter(user_email=request.session['Email']).create(
